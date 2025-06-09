@@ -31,3 +31,22 @@ export const getContact = async () => {
     return data;
   });
 };
+
+export const getContactData = async () => {
+  const data: ContactData[] = [
+    {
+      id: "0",
+      name: "mail",
+      value: "store@gmail.com",
+      icon: "/images/gmail.svg",
+    },
+    {
+      id: "1",
+      name: "phone",
+      value: "1 (212) 555-1234",
+      icon: "/images/gmail.svg",
+    },
+  ];
+
+  return data;
+};
