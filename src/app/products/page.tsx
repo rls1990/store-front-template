@@ -1,5 +1,3 @@
-const ProductsView = () => {
-  return <div>ProductsView</div>;
-};
-
-export default ProductsView;
+export default function ProductsPage() {
+  return <>ProductsPage</>;
+}

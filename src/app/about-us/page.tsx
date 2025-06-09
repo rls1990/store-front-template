@@ -1,5 +1,3 @@
-const AboutUsView = () => {
-  return <div>AboutUsView</div>;
-};
-
-export default AboutUsView;
+export default function AboutUsPage() {
+  return <>AboutUsPage</>;
+}

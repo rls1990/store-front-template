@@ -1,5 +1,3 @@
-const OffersVew = () => {
-  return <div>OffersVew</div>;
-};
-
-export default OffersVew;
+export default function OffersPage() {
+  return <>OffersPage</>;
+}
