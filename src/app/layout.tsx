@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import HeaderTop from "@/components/layout/header/top/HeaderTop";
+import Footer from "@/components/layout/footer/Footer";
+import NavBar from "@/components/layout/header/nav/NavBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,8 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-100 grid grid-rows-[auto_1fr_auto] min-h-[100dvh] antialiased">
+      <body className="bg-gray-100 grid grid-rows-[auto_auto_1fr_auto] min-h-[100dvh] antialiased">
+        <HeaderTop />
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
