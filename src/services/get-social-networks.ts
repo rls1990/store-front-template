@@ -35,3 +35,12 @@ export const getSocialNetworks = async () => {
     return data;
   });
 };
+
+export const getSocialNetworksData = async () => {
+  const data: SocialNetworksData[] = [
+    { id: "0", name: "facebook", url: "#", image: "/images/facebook.svg" },
+    { id: "1", name: "telegram", url: "#", image: "/images/telegram.svg" },
+    { id: "2", name: "youtube", url: "#", image: "/images/youtube.svg" },
+  ];
+  return data;
+};
