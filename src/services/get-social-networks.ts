@@ -38,9 +38,9 @@ export const getSocialNetworks = async () => {
 
 export const getSocialNetworksData = async () => {
   const data: SocialNetworksData[] = [
-    { id: "0", name: "facebook", url: "#", image: "/images/facebook.svg" },
-    { id: "1", name: "telegram", url: "#", image: "/images/telegram.svg" },
-    { id: "2", name: "youtube", url: "#", image: "/images/youtube.svg" },
+    { id: "0sn", name: "facebook", url: "#", image: "/images/facebook.svg" },
+    { id: "1sn", name: "telegram", url: "#", image: "/images/telegram.svg" },
+    { id: "2sn", name: "youtube", url: "#", image: "/images/youtube.svg" },
   ];
   return data;
 };

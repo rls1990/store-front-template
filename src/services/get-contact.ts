@@ -44,7 +44,7 @@ export const getContactData = async () => {
       id: "1",
       name: "phone",
       value: "1 (212) 555-1234",
-      icon: "/images/gmail.svg",
+      icon: "/images/call.svg",
     },
   ];
 
