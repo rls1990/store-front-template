@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="bg-gray-100 grid grid-rows-[auto_auto_1fr_auto] min-h-[100dvh] antialiased">
         <HeaderTop />
         <NavBar />
-        {children}
+        <div>{children}</div>
         <Footer />
       </body>
     </html>

@@ -36,3 +36,32 @@ export const getSliderItemsHero = async () => {
     return data;
   });
 };
+
+export const getSliderItemsHeroData = async () => {
+  const data: ItemSlider[] = [
+    {
+      id: "sih1",
+      title: "¡Llegó la Primavera!",
+      subtitle: "30% OFF en ropa y accesorios. Solo por tiempo limitado",
+      image: "/images/vestido_floral.png",
+      route: "#",
+    },
+    {
+      id: "sih2",
+      title: "Nuevo Smartphone Pro-X",
+      subtitle: "Tecnología de vanguardia con cámara 4K. ¡Reserva el tuyo hoy!",
+      image: "/images/cell.png",
+      route: "#",
+    },
+    {
+      id: "sih3",
+      title: "2×1 en Hogar",
+      subtitle:
+        "Lleva dos productos por el precio de uno. Solo hasta agotar stock",
+      image: "/images/cocina.png",
+      route: "#",
+    },
+  ];
+
+  return data;
+};
