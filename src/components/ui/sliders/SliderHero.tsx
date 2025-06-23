@@ -109,7 +109,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         )}
       </span>
 
-      {images && images.current && images.current?.length > 0 ? (
+      {images && images.current && images.current.length > 0 ? (
         <div className="w-full h-full flex items-center justify-center">
           <div
             key={Date.now()}
