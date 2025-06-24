@@ -16,7 +16,10 @@ interface SliderHeroProps {
 
 const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const images = useRef<ReactNode[] | null>(null);
+  // const images = useRef<ReactNode[] | null>(null);
+  const [images, setImages] = useState<ReactNode[] | null>(null);
+
+
 
   useEffect(() => {
     let imgs: ReactNode[] = [];
@@ -32,7 +35,8 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         />
       );
     });
-    images.current = imgs;
+    // images.current = imgs;
+    setImages(imgs)
   }, [items]);
 
   const nextIndex = () => {
@@ -72,7 +76,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         className="cursor-pointer transition-all active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[55%] sm:right-auto sm:top-[40%] sm:rotate-0 opacity-70 z-40"
         onClick={prevIndex}
         disabled={
-          images && images.current && images.current.length > 0 ? false : true
+          images && images && images.length > 0 ? false : true
         }
       >
         <LeftArrow className="size-12 sm:w-15 sm:h-27" />
@@ -81,7 +85,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         className="cursor-pointer transition-all   active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[40%] sm:right-0 sm:top-[40%] sm:rotate-0 opacity-70 hover:opacity-90 z-40"
         onClick={nextIndex}
         disabled={
-          images && images.current && images.current.length > 0 ? false : true
+          images && images && images.length > 0 ? false : true
         }
       >
         <RightArrow className="size-12 sm:w-15 sm:h-27" />
@@ -89,7 +93,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
 
       {/*Progress Indicators */}
       <span className="absolute bottom-4 w-full flex items-center justify-center gap-3 z-40">
-        {images && images.current && images.current?.length > 0 ? (
+        {images && images && images?.length > 0 ? (
           items.map((_item, index) => (
             <button
               key={index + "progi"}
@@ -110,14 +114,14 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         )}
       </span>
 
-      {images && images.current && images.current.length > 0 ? (
+      {images && images && images.length > 0 ? (
         <div className="w-full h-full flex items-center justify-center">
           <div
             key={Date.now()}
             className="fade-in w-full grid grid-cols-1 justify-items-center lg:grid-cols-2 overflow-x-hidden"
           >
             <div className="lg:flex lg:justify-end lg:w-full overflow-hidden mask-x-from-95% mask-y-from-95%">
-              {images && images.current && images.current[currentIndex]}
+              {images && images && images[currentIndex]}
             </div>
 
             <div className="flex flex-col items-center justify-center lg:items-baseline lg:w-full lg:pl-12 slide-left">

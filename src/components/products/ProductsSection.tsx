@@ -1,11 +1,15 @@
-"use client";
-
+"use client"
+import { FC } from "react";
 import ProductFilter from "../ui/filter/ProductFilter";
 
-const ProductsSection = () => {
+interface ProductsSectionProps {
+  marcas: string[];
+}
+
+const ProductsSection: FC<ProductsSectionProps> = ({ marcas }) => {
   return (
     <div>
-      <ProductFilter onChange={(filter)=>console.log(filter)}/>
+      <ProductFilter marcas={marcas} onChange={(filter) => console.log(filter)} />
     </div>
   );
 };

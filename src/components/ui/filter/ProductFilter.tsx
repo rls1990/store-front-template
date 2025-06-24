@@ -19,10 +19,11 @@ interface FilterData {
 }
 
 interface ProductFilterProps {
+  marcas?: string[];
   onChange?: (data: FilterData) => void;
 }
 
-const ProductFilter: FC<ProductFilterProps> = ({ onChange }) => {
+const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
   const [openMenuFulter, setOpenMenuFulter] = useState(false);
   const filter = useRef<FilterData>({
     nombre: "",
@@ -109,7 +110,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ onChange }) => {
 
             <Select
               title="Marca"
-              items={["Marca A", "Marca B", "Marca C"]}
+              items={marcas ? marcas : ["Marca A", "Marca B", "Marca C"]}
               onChange={(value) => filter.current = { ...filter.current, marca: value }}
             />
 
