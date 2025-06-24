@@ -7,6 +7,7 @@ import Select from "../fields/select/Select";
 import ColorSelect from "../fields/color/ColorSelect";
 import { PriceRange } from "../fields/range/PriceRange";
 import Rating from "../fields/rating/Rating";
+import FilterSearchIcon from "../icons/FilterSearchIcon";
 
 interface FilterData {
   nombre?: string;
@@ -17,11 +18,11 @@ interface FilterData {
   rating: number;
 }
 
-interface ProductFilterProps{
-  onChange?: (data:FilterData)=>void;
+interface ProductFilterProps {
+  onChange?: (data: FilterData) => void;
 }
 
-const ProductFilter:FC<ProductFilterProps> = ({onChange}) => {
+const ProductFilter: FC<ProductFilterProps> = ({ onChange }) => {
   const [openMenuFulter, setOpenMenuFulter] = useState(false);
   const filter = useRef<FilterData>({
     nombre: "",
@@ -71,8 +72,7 @@ const ProductFilter:FC<ProductFilterProps> = ({onChange}) => {
             <ChevronDownIcon
               className={
                 "size-5 mr-1" +
-                ` transition-transform ${
-                  openMenuFulter ? "rotate-0" : "-rotate-90"
+                ` transition-transform ${openMenuFulter ? "rotate-0" : "-rotate-90"
                 }`
               }
             />
@@ -92,11 +92,11 @@ const ProductFilter:FC<ProductFilterProps> = ({onChange}) => {
             <Select
               title="Fecha de Publicación"
               items={["Más Reciente", "Más Antiguo"]}
-              onChange={(value) => filter.current={...filter.current,fecha_publicacion:value}}
+              onChange={(value) => filter.current = { ...filter.current, fecha_publicacion: value }}
             />
 
             <ColorSelect
-              onChange={(color) => filter.current={...filter.current,color:color}}
+              onChange={(color) => filter.current = { ...filter.current, color: color }}
               listcolors={["rojo", "azul", "verde", "blanco"]}
             />
 
@@ -104,18 +104,19 @@ const ProductFilter:FC<ProductFilterProps> = ({onChange}) => {
               min={0}
               max={5000}
               step={10}
-              onChange={(range) => filter.current={...filter.current,rango_precio:range}}
+              onChange={(range) => filter.current = { ...filter.current, rango_precio: range }}
             />
 
             <Select
               title="Marca"
               items={["Marca A", "Marca B", "Marca C"]}
-              onChange={(value) => filter.current={...filter.current,marca:value}}
+              onChange={(value) => filter.current = { ...filter.current, marca: value }}
             />
 
-            <Rating onChange={(rating) => filter.current={...filter.current,rating:rating}} />
+            <Rating onChange={(rating) => filter.current = { ...filter.current, rating: rating }} />
           </div>
-          <button className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150" onClick={()=>onChange?.(filter.current)}>
+          <button className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 inline-flex items-center gap-1" onClick={() => onChange?.(filter.current)}>
+            <FilterSearchIcon />
             Aplicar Filtros
           </button>
         </div>
