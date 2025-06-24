@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useState } from "react";
 
 interface SelectProps {
   title?: string;
@@ -9,6 +9,7 @@ interface SelectProps {
 }
 
 const Select: FC<SelectProps> = ({ title, items, onChange }) => {
+  const [value, setvalue] = useState("")
   return (
     <div>
       <label className="block text-xs font-medium text-gray-600 mb-1">
@@ -17,9 +18,11 @@ const Select: FC<SelectProps> = ({ title, items, onChange }) => {
       <select
         className="w-full text-sm p-2 border-gray-300 rounded-md shadow-sm focus:border-emerald-300 focus:ring focus:ring-emerald-200 focus:ring-opacity-50"
         onChange={(item) => {
-          const value = item.target.value;
-          if (value != "Elija una opción") onChange?.(item.target.value);
+          const valueS = item.target.value;
+          setvalue(valueS)
+          if (valueS != "Elija una opción") onChange?.(item.target.value);
         }}
+        value={value}
       >
         <option>Elija una opción</option>
         {items.map((item, index) => (
