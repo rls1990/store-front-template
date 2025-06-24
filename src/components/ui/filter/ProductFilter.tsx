@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useRef, useState } from "react";
 import FilterIcon from "../icons/FilterIcon";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
 import Select from "../fields/select/Select";
@@ -8,8 +8,30 @@ import ColorSelect from "../fields/color/ColorSelect";
 import { PriceRange } from "../fields/range/PriceRange";
 import Rating from "../fields/rating/Rating";
 
-const ProductFilter = () => {
+interface FilterData {
+  nombre?: string;
+  fecha_publicacion?: string;
+  color?: string;
+  rango_precio: { min: number; max: number };
+  marca: string;
+  rating: number;
+}
+
+interface ProductFilterProps{
+  onChange?: (data:FilterData)=>void;
+}
+
+const ProductFilter:FC<ProductFilterProps> = ({onChange}) => {
   const [openMenuFulter, setOpenMenuFulter] = useState(false);
+  const filter = useRef<FilterData>({
+    nombre: "",
+    fecha_publicacion: "",
+    color: "",
+    rango_precio: { min: 0, max: 0 },
+    marca: "",
+    rating: 0,
+  });
+
   return (
     <div className="bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4">
@@ -20,6 +42,9 @@ const ProductFilter = () => {
               id="search-input"
               placeholder="Buscar por nombre..."
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-150 ease-in-out placeholder:text-[15px]"
+              onBlur={(e) => {
+                filter.current = { ...filter.current, nombre: e.target.value };
+              }}
             />
             <div className="absolute left-0 top-0 bottom-0 pl-3 flex items-center pointer-events-none">
               <svg
@@ -67,11 +92,11 @@ const ProductFilter = () => {
             <Select
               title="Fecha de Publicación"
               items={["Más Reciente", "Más Antiguo"]}
-              onChange={(value) => console.log(value)}
+              onChange={(value) => filter.current={...filter.current,fecha_publicacion:value}}
             />
 
             <ColorSelect
-              onChange={(color) => console.log(color)}
+              onChange={(color) => filter.current={...filter.current,color:color}}
               listcolors={["rojo", "azul", "verde", "blanco"]}
             />
 
@@ -79,18 +104,18 @@ const ProductFilter = () => {
               min={0}
               max={5000}
               step={10}
-              onChange={(range) => console.log(range)}
+              onChange={(range) => filter.current={...filter.current,rango_precio:range}}
             />
 
             <Select
               title="Marca"
               items={["Marca A", "Marca B", "Marca C"]}
-              onChange={(value) => console.log(value)}
+              onChange={(value) => filter.current={...filter.current,marca:value}}
             />
 
-            <Rating onChange={(rating) => console.log(rating)} />
+            <Rating onChange={(rating) => filter.current={...filter.current,rating:rating}} />
           </div>
-          <button className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150">
+          <button className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150" onClick={()=>onChange?.(filter.current)}>
             Aplicar Filtros
           </button>
         </div>

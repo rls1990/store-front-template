@@ -5,7 +5,7 @@ import ProductFilter from "../ui/filter/ProductFilter";
 const ProductsSection = () => {
   return (
     <div>
-      <ProductFilter />
+      <ProductFilter onChange={(filter)=>console.log(filter)}/>
     </div>
   );
 };

@@ -28,6 +28,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
           height={400}
           className="h-[240px] md:h-[290px] lg:h-[400px] w-auto mask-x-from-95% mask-y-from-95% slide-right-zoom"
           alt={items[currentIndex].title}
+          priority
         />
       );
     });
