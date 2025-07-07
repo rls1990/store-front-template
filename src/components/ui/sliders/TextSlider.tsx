@@ -59,7 +59,7 @@ const TextSlider: React.FC<TextSliderProps> = ({
     }, interval);
 
     return () => clearInterval(timer);
-  }, [items.length, interval]);
+  }, [items, interval]);
 
   if (!items || items.length === 0) return null;
 
