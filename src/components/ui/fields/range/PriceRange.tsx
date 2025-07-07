@@ -72,7 +72,6 @@ export const PriceRange: React.FC<PriceRangeProps> = ({
     setActiveThumb(null);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (activeThumb) {
       window.addEventListener("mousemove", handleMouseMove);
@@ -82,7 +81,7 @@ export const PriceRange: React.FC<PriceRangeProps> = ({
         window.removeEventListener("mouseup", handleMouseUp);
       };
     }
-  }, [activeThumb, minValue, maxValue]);
+  }, [activeThumb, minValue, maxValue, handleMouseMove]);
 
   const minPosition = ((minValue - min) / (max - min)) * 100;
   const maxPosition = ((maxValue - min) / (max - min)) * 100;
