@@ -81,7 +81,7 @@ export const PriceRange: React.FC<PriceRangeProps> = ({
         window.removeEventListener("mouseup", handleMouseUp);
       };
     }
-  }, [activeThumb, minValue, maxValue, handleMouseMove]);
+  }, [activeThumb, minValue, maxValue]);
 
   const minPosition = ((minValue - min) / (max - min)) * 100;
   const maxPosition = ((maxValue - min) / (max - min)) * 100;

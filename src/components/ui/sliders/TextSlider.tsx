@@ -23,7 +23,7 @@ const TextSlider: React.FC<TextSliderProps> = ({
   const [images, setImages] = useState<ReactNode[] | null>(null);
 
   useEffect(() => {
-    let imgs: ReactNode[] = [];
+    const imgs: ReactNode[] = [];
     items.forEach((item) => {
       imgs.push(
         <Image
