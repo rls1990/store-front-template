@@ -35,7 +35,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
     });
     // images.current = imgs;
     setImages(imgs);
-  }, [items]);
+  }, [items, currentIndex]);
 
   const nextIndex = () => {
     setCurrentIndex((prevIndex) =>

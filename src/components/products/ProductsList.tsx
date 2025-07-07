@@ -4,10 +4,10 @@ const ProductsList = () => {
       <div className="lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]">
         <aside className="lg:col-span-1 mb-8 lg:mb-0">
           <div className="bg-white p-6 rounded-lg shadow-md sticky top-24">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">
+            <h3 className="text-lg font-semibold text-gray-700 mb-4 border-b border-b-gray-300 pb-2">
               Categorías
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 overflow-y-auto">
               <li>
                 <button
                   className="filter-button w-full text-left px-4 py-2 rounded-md text-gray-700 hover:bg-gray-200 transition duration-150 filter-active"

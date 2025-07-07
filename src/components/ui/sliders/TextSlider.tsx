@@ -2,7 +2,7 @@
 
 import { ItemSlider } from "@/data/slider-news";
 import Image from "next/image";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { RiLoaderLine } from "react-icons/ri";
 
 interface TextSliderProps {

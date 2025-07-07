@@ -19,7 +19,7 @@ export default function DynamicSVG({
       res += `[&_svg]:${item} `;
     });
     setClassSvg(res);
-  }, []);
+  }, [className]);
 
   useEffect(() => {
     fetch(url)

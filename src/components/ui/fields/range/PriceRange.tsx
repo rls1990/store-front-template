@@ -72,6 +72,7 @@ export const PriceRange: React.FC<PriceRangeProps> = ({
     setActiveThumb(null);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (activeThumb) {
       window.addEventListener("mousemove", handleMouseMove);
