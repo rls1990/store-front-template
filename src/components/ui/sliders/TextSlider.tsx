@@ -39,7 +39,7 @@ const TextSlider: React.FC<TextSliderProps> = ({
 
     // images.current = imgs;
     setImages(imgs);
-  }, [items]);
+  }, [items, currentIndex]);
 
   useEffect(() => {
     if (items.length <= 1) return;
