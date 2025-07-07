@@ -1,12 +1,12 @@
 "use client";
 
-import { FC, ReactNode, useEffect, useRef, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
-import { ItemSlider } from "@/services/get-slider-hero-items";
 import Image from "next/image";
 import Link from "next/link";
 import ProductIcon from "../icons/ProductIcon";
+import { ItemSlider } from "@/data/slider-hero";
 
 interface SliderHeroProps {
   items: ItemSlider[];
@@ -115,7 +115,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
             className="fade-in w-full grid grid-cols-1 justify-items-center lg:grid-cols-2 overflow-x-hidden"
           >
             <div className="lg:flex lg:justify-end lg:w-full overflow-hidden mask-x-from-95% mask-y-from-95%">
-              {images && images && images[currentIndex]}
+              {images && images[currentIndex]}
             </div>
 
             <div className="flex flex-col items-center justify-center lg:items-baseline lg:w-full lg:pl-12 slide-left">

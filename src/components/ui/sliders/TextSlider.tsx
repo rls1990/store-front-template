@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemSlider } from "@/services/get-news";
+import { ItemSlider } from "@/data/slider-news";
 import Image from "next/image";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
@@ -18,7 +18,8 @@ const TextSlider: React.FC<TextSliderProps> = ({
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const [direction, setDirection] = useState<"left" | "right">("left");
-  const images = useRef<ReactNode[] | null>(null);
+  // const images = useRef<ReactNode[] | null>(null);
+  const [images, setImages] = useState<ReactNode[] | null>(null);
 
   useEffect(() => {
     let imgs: ReactNode[] = [];
@@ -35,7 +36,8 @@ const TextSlider: React.FC<TextSliderProps> = ({
       );
     });
 
-    images.current = imgs;
+    // images.current = imgs;
+    setImages(imgs);
   }, [items]);
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const TextSlider: React.FC<TextSliderProps> = ({
       <div className={`relative h-[23px] ${className}`}>
         <div className="w-full text-left absolute top-1">
           <span className="inline-flex items-center justify-center gap-1">
-            {images && images.current && images.current[currentIndex]}
+            {images && images[currentIndex]}
             {items[0].message}
           </span>
         </div>
@@ -76,7 +78,7 @@ const TextSlider: React.FC<TextSliderProps> = ({
 
   return (
     <>
-      {images && images.current && images.current.length ? (
+      {images && images.length > 0 ? (
         <div className={`relative h-[23px] ${className}`}>
           <div
             className={`absolute w-full text-center transition-all duration-500 ease-in-out ${
@@ -88,7 +90,7 @@ const TextSlider: React.FC<TextSliderProps> = ({
             }`}
           >
             <span className="inline-flex items-center justify-center gap-1">
-              {images && images.current && images.current[currentIndex]}
+              {images && images[currentIndex]}
               <p className="mt-1">{items[currentIndex].message}</p>
             </span>
           </div>
