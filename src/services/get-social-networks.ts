@@ -1,11 +1,5 @@
+import { data, SocialNetworksData } from "@/data/social-networks";
 import { query } from "./strapi";
-
-export interface SocialNetworksData {
-  id: string;
-  name: string;
-  url: string;
-  image: string;
-}
 
 export interface SocialNetworksResponse {
   id: string;
@@ -37,10 +31,5 @@ export const getSocialNetworks = async () => {
 };
 
 export const getSocialNetworksData = async () => {
-  const data: SocialNetworksData[] = [
-    { id: "0sn", name: "facebook", url: "#", image: "/images/facebook.svg" },
-    { id: "1sn", name: "telegram", url: "#", image: "/images/telegram.svg" },
-    { id: "2sn", name: "youtube", url: "#", image: "/images/youtube.svg" },
-  ];
   return data;
 };

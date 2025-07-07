@@ -1,4 +1,4 @@
-import { SocialNetworksData } from "@/services/get-social-networks";
+import { SocialNetworksData } from "@/data/social-networks";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -9,7 +9,7 @@ interface SocialNetwoksTopProps {
 
 const SocialNetwoksTop: FC<SocialNetwoksTopProps> = ({ items, className }) => {
   return (
-    <div className={`items-center justify-center gap-4 ${className}`}>
+    <div className={`items-center justify-center gap-4 fade-in ${className}`}>
       {items.map((item) => (
         <div key={item.id + Date.now()} className="group relative">
           <a href={item.url}>

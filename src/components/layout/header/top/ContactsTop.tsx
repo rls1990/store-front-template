@@ -1,4 +1,4 @@
-import { ContactData } from "@/services/get-contact";
+import { ContactData } from "@/data/contacts";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -10,7 +10,7 @@ interface ContactsTopProps {
 const ContactsTop: FC<ContactsTopProps> = ({ items, className }) => {
   return (
     <div
-      className={`inline-flex items-center justify-center mt-1 gap-3 ${className}`}
+      className={`inline-flex items-center justify-center mt-1 gap-3 fade-in ${className}`}
     >
       {items.map((item) => (
         <div

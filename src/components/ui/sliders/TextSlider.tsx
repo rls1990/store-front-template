@@ -3,6 +3,7 @@
 import { ItemSlider } from "@/data/slider-news";
 import Image from "next/image";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import { RiLoaderLine } from "react-icons/ri";
 
 interface TextSliderProps {
   items: ItemSlider[];
@@ -96,7 +97,13 @@ const TextSlider: React.FC<TextSliderProps> = ({
           </div>
         </div>
       ) : (
-        <p>...loading</p>
+        <div className={`relative h-[23px] ${className}`}>
+          <div className="absolute w-full text-center">
+            <span className="inline-flex items-center justify-center gap-1">
+              <RiLoaderLine className="size-[24px] animate-spin" />
+            </span>
+          </div>
+        </div>
       )}
     </>
   );

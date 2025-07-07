@@ -1,11 +1,5 @@
+import { ContactData, data } from "@/data/contacts";
 import { query } from "./strapi";
-
-export interface ContactData {
-  id: string;
-  name: string;
-  icon: string;
-  value: string;
-}
 
 export interface ContactDataResponse {
   id: string;
@@ -33,20 +27,5 @@ export const getContact = async () => {
 };
 
 export const getContactData = async () => {
-  const data: ContactData[] = [
-    {
-      id: "0",
-      name: "mail",
-      value: "store@gmail.com",
-      icon: "/images/gmail.svg",
-    },
-    {
-      id: "1",
-      name: "phone",
-      value: "1 (212) 555-1234",
-      icon: "/images/call.svg",
-    },
-  ];
-
   return data;
 };
