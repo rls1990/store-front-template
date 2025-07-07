@@ -1,11 +1,5 @@
+import { data, LogoData } from "@/data/logo";
 import { query } from "./strapi";
-
-export interface LogoData {
-  id: number;
-  title: string;
-  subtitle: string;
-  image: string;
-}
 
 export interface LogoResponse {
   id: number;
@@ -32,4 +26,8 @@ export const getLogo = async (): Promise<LogoData> => {
       };
     }
   );
+};
+
+export const getLogoData = async () => {
+  return data;
 };
