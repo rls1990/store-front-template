@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import { FC } from "react";
 import ProductFilter from "../ui/filter/ProductFilter";
+import ProductsList from "./ProductsList";
 
 interface ProductsSectionProps {
   marcas: string[];
@@ -9,7 +10,11 @@ interface ProductsSectionProps {
 const ProductsSection: FC<ProductsSectionProps> = ({ marcas }) => {
   return (
     <div>
-      <ProductFilter marcas={marcas} onChange={(filter) => console.log(filter)} />
+      <ProductFilter
+        marcas={marcas}
+        onChange={(filter) => console.log(filter)}
+      />
+      <ProductsList />
     </div>
   );
 };

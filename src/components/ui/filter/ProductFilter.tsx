@@ -35,8 +35,8 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
   });
 
   return (
-    <div className="bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4">
+    <div className="bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 pt-5">
         <div className="inline-flex w-full gap-3 flex-col sm:flex-row">
           <div className="relative flex-grow w-full sm:w-auto">
             <input
@@ -73,7 +73,8 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             <ChevronDownIcon
               className={
                 "size-5 mr-1" +
-                ` transition-transform ${openMenuFulter ? "rotate-0" : "-rotate-90"
+                ` transition-transform ${
+                  openMenuFulter ? "rotate-0" : "-rotate-90"
                 }`
               }
             />
@@ -93,11 +94,18 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             <Select
               title="Fecha de Publicación"
               items={["Más Reciente", "Más Antiguo"]}
-              onChange={(value) => filter.current = { ...filter.current, fecha_publicacion: value }}
+              onChange={(value) =>
+                (filter.current = {
+                  ...filter.current,
+                  fecha_publicacion: value,
+                })
+              }
             />
 
             <ColorSelect
-              onChange={(color) => filter.current = { ...filter.current, color: color }}
+              onChange={(color) =>
+                (filter.current = { ...filter.current, color: color })
+              }
               listcolors={["rojo", "azul", "verde", "blanco"]}
             />
 
@@ -105,18 +113,29 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
               min={0}
               max={5000}
               step={10}
-              onChange={(range) => filter.current = { ...filter.current, rango_precio: range }}
+              onChange={(range) =>
+                (filter.current = { ...filter.current, rango_precio: range })
+              }
             />
 
             <Select
               title="Marca"
               items={marcas ? marcas : ["Marca A", "Marca B", "Marca C"]}
-              onChange={(value) => filter.current = { ...filter.current, marca: value }}
+              onChange={(value) =>
+                (filter.current = { ...filter.current, marca: value })
+              }
             />
 
-            <Rating onChange={(rating) => filter.current = { ...filter.current, rating: rating }} />
+            <Rating
+              onChange={(rating) =>
+                (filter.current = { ...filter.current, rating: rating })
+              }
+            />
           </div>
-          <button className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 inline-flex items-center gap-1" onClick={() => onChange?.(filter.current)}>
+          <button
+            className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 inline-flex items-center gap-1"
+            onClick={() => onChange?.(filter.current)}
+          >
             <FilterSearchIcon />
             Aplicar Filtros
           </button>
