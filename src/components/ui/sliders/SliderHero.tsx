@@ -19,8 +19,6 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
   // const images = useRef<ReactNode[] | null>(null);
   const [images, setImages] = useState<ReactNode[] | null>(null);
 
-
-
   useEffect(() => {
     let imgs: ReactNode[] = [];
     items.forEach((item) => {
@@ -29,14 +27,14 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
           src={item.image}
           width={400}
           height={400}
-          className="h-[240px] md:h-[290px] lg:h-[400px] w-auto mask-x-from-95% mask-y-from-95% slide-right-zoom"
+          className="h-[240px] md:h-[290px] lg:h-[370px] w-auto mask-x-from-95% mask-y-from-95% slide-right-zoom"
           alt={items[currentIndex].title}
           priority
         />
       );
     });
     // images.current = imgs;
-    setImages(imgs)
+    setImages(imgs);
   }, [items]);
 
   const nextIndex = () => {
@@ -65,7 +63,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
     );
 
     return () => clearInterval(timer);
-  }, [items.length]);
+  }, [currentIndex]);
 
   if (!items || items.length === 0) return null;
 
@@ -75,18 +73,14 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
       <button
         className="cursor-pointer transition-all active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[55%] sm:right-auto sm:top-[40%] sm:rotate-0 opacity-70 z-40"
         onClick={prevIndex}
-        disabled={
-          images && images && images.length > 0 ? false : true
-        }
+        disabled={images && images && images.length > 0 ? false : true}
       >
         <LeftArrow className="size-12 sm:w-15 sm:h-27" />
       </button>
       <button
         className="cursor-pointer transition-all   active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[40%] sm:right-0 sm:top-[40%] sm:rotate-0 opacity-70 hover:opacity-90 z-40"
         onClick={nextIndex}
-        disabled={
-          images && images && images.length > 0 ? false : true
-        }
+        disabled={images && images && images.length > 0 ? false : true}
       >
         <RightArrow className="size-12 sm:w-15 sm:h-27" />
       </button>
