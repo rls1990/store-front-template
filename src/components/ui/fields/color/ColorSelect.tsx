@@ -5,15 +5,19 @@ import DeleteIcon from "../../icons/DeleteIcon";
 
 interface ColorSelectProps {
   listcolors: ("rojo" | "azul" | "verde" | "amarillo" | "negro" | "blanco")[];
-
+  className?: string;
   onChange?: (color: string) => void;
 }
 
-const ColorSelect: FC<ColorSelectProps> = ({ listcolors, onChange }) => {
+const ColorSelect: FC<ColorSelectProps> = ({
+  listcolors,
+  className,
+  onChange,
+}) => {
   const [colorIndex, setColorIndex] = useState(-1);
 
   return (
-    <div>
+    <div className={className}>
       <label className="block text-xs font-medium text-gray-600 mb-1">
         Color
       </label>
