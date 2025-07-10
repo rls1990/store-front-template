@@ -92,10 +92,10 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             `${openMenuFulter ? " scale-100 h-100 md:h-80" : " scale-0 h-0"}`
           }
         >
-          <h4 className="text-sm font-semibold text-gray-800 mb-3 border-b border-b-gray-300 pb-2 m-4">
+          <h4 className="text-[16px] font-semibold text-gray-700 mb-3 border-b border-b-gray-300 pb-2 m-4 pl-8">
             Opciones de Filtro
           </h4>
-          <div className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7">
+          <div className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7 border-b border-b-gray-300 pb-5">
             <Select
               title="Fecha de Publicación"
               items={["Más Reciente", "Más Antiguo"]}
@@ -118,17 +118,11 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
 
             <ColorSelect
+              className="pl-3 sm:pl-0"
               onChange={(color) =>
                 (filter.current = { ...filter.current, color: color })
               }
-              listcolors={[
-                "rojo",
-                "azul",
-                "verde",
-                "blanco",
-                "amarillo",
-                "negro",
-              ]}
+              listcolors={["rojo", "azul", "verde", "blanco", "negro"]}
             />
 
             <PriceRange
@@ -148,7 +142,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
           </div>
           <button
-            className="px-3 py-2 ml-10 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 cursor-pointer"
+            className="px-3 py-2 ml-10 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 cursor-pointer mb-5"
             onClick={() => onChange?.(filter.current)}
           >
             <span className="flex items-center justify-center gap-1">
