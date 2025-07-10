@@ -88,7 +88,11 @@ export const PriceRange: React.FC<PriceRangeProps> = ({
 
   return (
     <div className={`${className}`}>
-      {label && <h3 className="text-xs font-medium text-gray-600">{label}</h3>}
+      {label && (
+        <label className="block text-[14px] font-medium text-gray-600 mb-1">
+          {label}
+        </label>
+      )}
 
       <div ref={containerRef} className="relative h-8">
         {/* Background track */}

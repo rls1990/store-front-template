@@ -13,7 +13,7 @@ const Select: FC<SelectProps> = ({ title, items, className, onChange }) => {
   const [value, setvalue] = useState("");
   return (
     <div className={className}>
-      <label className="block text-[14px] font-medium text-gray-600 mb-1 ml-3">
+      <label className="block text-[14px] font-medium text-gray-600 mb-1 ml-1">
         {title}
       </label>
       <select

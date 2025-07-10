@@ -9,6 +9,7 @@ interface RatingProps {
   onChange?: (rating: number) => void;
   maxRating?: number;
   label?: string;
+  className?: string;
 }
 
 export default function Rating({
@@ -16,6 +17,7 @@ export default function Rating({
   onChange,
   maxRating = 5,
   label = "Filtrar por calificación:",
+  className,
 }: RatingProps) {
   const [rating, setRating] = useState(initialRating);
   const [hoverRating, setHoverRating] = useState(0);
@@ -27,8 +29,12 @@ export default function Rating({
   };
 
   return (
-    <div className="space-y-2">
-      {label && <p className="text-sm font-medium text-gray-700">{label}</p>}
+    <div className={"space-y-2" + className && ` ${className}`}>
+      {label && (
+        <label className="block text-[14px] font-medium text-gray-600 mb-1">
+          {label}
+        </label>
+      )}
       <div className="flex items-center [&_button]:cursor-pointer">
         {[...Array(maxRating)].map((_, index) => {
           const ratingValue = index + 1;

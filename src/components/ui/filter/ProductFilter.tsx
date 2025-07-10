@@ -90,7 +90,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
           <h4 className="text-sm font-semibold text-gray-800 mb-3 border-b border-b-gray-300 pb-2 m-4">
             Opciones de Filtro
           </h4>
-          <div className="m-4 grid items-center justify-items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7">
+          <div className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7">
             <Select
               title="Fecha de Publicación"
               items={["Más Reciente", "Más Antiguo"]}
@@ -103,8 +103,16 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
               }
             />
 
-            <ColorSelect
+            <Select
+              title="Marca"
+              items={marcas ? marcas : ["Marca A", "Marca B", "Marca C"]}
               className="w-full"
+              onChange={(value) =>
+                (filter.current = { ...filter.current, marca: value })
+              }
+            />
+
+            <ColorSelect
               onChange={(color) =>
                 (filter.current = { ...filter.current, color: color })
               }
@@ -119,20 +127,12 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
 
             <PriceRange
-              className="w-full"
+              className="w-full px-3"
               min={0}
               max={5000}
               step={10}
               onChange={(range) =>
                 (filter.current = { ...filter.current, rango_precio: range })
-              }
-            />
-
-            <Select
-              title="Marca"
-              items={marcas ? marcas : ["Marca A", "Marca B", "Marca C"]}
-              onChange={(value) =>
-                (filter.current = { ...filter.current, marca: value })
               }
             />
 
@@ -143,11 +143,13 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
           </div>
           <button
-            className="w-auto py-2 px-4 m-4 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 inline-flex items-center gap-1"
+            className="px-3 py-2 ml-10 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150"
             onClick={() => onChange?.(filter.current)}
           >
-            <FilterSearchIcon />
-            Aplicar Filtros
+            <span className="flex items-center justify-center gap-1">
+              <FilterSearchIcon />
+              Aplicar Filtros
+            </span>
           </button>
         </div>
       </div>
