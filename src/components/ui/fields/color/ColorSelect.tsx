@@ -18,10 +18,10 @@ const ColorSelect: FC<ColorSelectProps> = ({
 
   return (
     <div className={className}>
-      <label className="block text-xs font-medium text-gray-600 mb-1">
+      <label className="block text-[14px] font-medium text-gray-600 mb-1 ml-10">
         Color
       </label>
-      <div className="flex flex-wrap gap-2 [&_button]:cursor-pointer">
+      <div className="flex items-center justify-center flex-wrap gap-2 [&_button]:cursor-pointer">
         {listcolors.findIndex((value) => value == "rojo") !== -1 && (
           <button
             onClick={() => {

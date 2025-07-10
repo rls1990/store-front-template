@@ -104,6 +104,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
 
             <ColorSelect
+              className="w-full"
               onChange={(color) =>
                 (filter.current = { ...filter.current, color: color })
               }
@@ -118,6 +119,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
 
             <PriceRange
+              className="w-full"
               min={0}
               max={5000}
               step={10}
