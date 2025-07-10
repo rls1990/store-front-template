@@ -9,10 +9,7 @@ const ProductsList = () => {
             </h3>
             <ul className="space-y-2 overflow-y-auto">
               <li>
-                <button
-                  className="filter-button w-full text-left px-4 py-2 rounded-md text-gray-700 hover:bg-gray-200 transition duration-150 filter-active"
-                  data-category="all"
-                >
+                <button className="filter-button w-full text-left px-4 py-2 rounded-md text-gray-700 hover:bg-gray-200 transition duration-150 filter-active">
                   Todos
                 </button>
               </li>

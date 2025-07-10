@@ -5,6 +5,7 @@ import DeleteIcon from "../../icons/DeleteIcon";
 
 interface ColorSelectProps {
   listcolors: ("rojo" | "azul" | "verde" | "amarillo" | "negro" | "blanco")[];
+
   onChange?: (color: string) => void;
 }
 
