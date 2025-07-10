@@ -42,11 +42,16 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             <input
               type="text"
               id="search-input"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onChange?.(filter.current);
+                }
+              }}
+              onChange={(e) =>
+                (filter.current = { ...filter.current, nombre: e.target.value })
+              }
               placeholder="Buscar por nombre..."
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-150 ease-in-out placeholder:text-[15px]"
-              onBlur={(e) => {
-                filter.current = { ...filter.current, nombre: e.target.value };
-              }}
             />
             <div className="absolute left-0 top-0 bottom-0 pl-3 flex items-center pointer-events-none">
               <svg
@@ -143,7 +148,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
           </div>
           <button
-            className="px-3 py-2 ml-10 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150"
+            className="px-3 py-2 ml-10 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 cursor-pointer"
             onClick={() => onChange?.(filter.current)}
           >
             <span className="flex items-center justify-center gap-1">
