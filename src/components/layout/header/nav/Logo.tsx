@@ -14,10 +14,10 @@ const Logo = async () => {
         className="w-[45px]"
       />
       <div>
-        <span className="font-bold text-emerald-600 text-[24px] relative -left-[6px] top-[1px] uppercase">
+        <span className="font-bold text-[#00BC7D] text-[24px] relative left-0 top-0 uppercase">
           {title}
         </span>
-        <span className="relative -left-27 top-[12px] uppercase text-[9px] font-semibold text-emerald-900">
+        <span className="relative -left-28 top-[12px] uppercase text-[9px] font-semibold text-[#00BC7D]">
           {subtitle}
         </span>
       </div>
