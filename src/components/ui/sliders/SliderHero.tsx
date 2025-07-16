@@ -1,12 +1,12 @@
 "use client";
 
+import { ItemSlider } from "@/data/slider-hero";
+import Image from "next/image";
 import { FC, ReactNode, useEffect, useState } from "react";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
-import Image from "next/image";
 import Link from "next/link";
 import ProductIcon from "../icons/ProductIcon";
-import { ItemSlider } from "@/data/slider-hero";
 
 interface SliderHeroProps {
   items: ItemSlider[];
@@ -27,7 +27,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
           src={item.image}
           width={400}
           height={400}
-          className="h-[240px] md:h-[290px] lg:h-[370px] w-auto mask-x-from-95% mask-y-from-95% slide-right-zoom"
+          className="h-[270px] md:h-[290px] lg:h-[350px] w-auto mask-x-from-95% mask-y-from-95% slide-right-zoom"
           alt={items[currentIndex].title}
           priority
         />
@@ -68,25 +68,25 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
   if (!items || items.length === 0) return null;
 
   return (
-    <div className="h-[83vh] lg:h-[73vh] relative bg-gradient-to-r from-emerald-500 to-teal-600">
+    <div className="w-full h-[83vh] relative bg-gradient-to-r from-emerald-500 to-teal-600">
       {/* left right buttons */}
       <button
         className="cursor-pointer transition-all active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[55%] sm:right-auto sm:top-[40%] sm:rotate-0 opacity-70 z-40"
         onClick={prevIndex}
         disabled={images && images && images.length > 0 ? false : true}
       >
-        <LeftArrow className="size-12 sm:w-15 sm:h-27" />
+        <LeftArrow className="size-12" />
       </button>
       <button
         className="cursor-pointer transition-all   active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[40%] sm:right-0 sm:top-[40%] sm:rotate-0 opacity-70 hover:opacity-90 z-40"
         onClick={nextIndex}
         disabled={images && images && images.length > 0 ? false : true}
       >
-        <RightArrow className="size-12 sm:w-15 sm:h-27" />
+        <RightArrow className="size-12" />
       </button>
 
       {/*Progress Indicators */}
-      <span className="absolute bottom-4 w-full flex items-center justify-center gap-3 z-40">
+      <span className="absolute bottom-7 w-full flex items-center justify-center gap-3 z-40">
         {images && images && images?.length > 0 ? (
           items.map((_item, index) => (
             <button
@@ -108,41 +108,38 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         )}
       </span>
 
-      {images && images && images.length > 0 ? (
-        <div className="w-full h-full flex items-center justify-center">
-          <div
-            key={Date.now()}
-            className="fade-in w-full grid grid-cols-1 justify-items-center lg:grid-cols-2 overflow-x-hidden"
-          >
-            <div className="lg:flex lg:justify-end lg:w-full overflow-hidden mask-x-from-95% mask-y-from-95%">
-              {images && images[currentIndex]}
-            </div>
+      {/* Slider Items */}
+      {images && images.length > 0 ? (
+        <div
+          key={Date.now()}
+          className="w-full h-full fade-in grid grid-cols-1 justify-items-center items-center lg:grid-cols-2 overflow-x-hidden"
+        >
+          <div className="w-full h-full flex items-end justify-center lg:justify-end lg:items-center overflow-hidden mask-x-from-95% mask-y-from-95%">
+            {images && images[currentIndex]}
+          </div>
 
-            <div className="flex flex-col items-center justify-center lg:items-baseline lg:w-full lg:pl-12 slide-left">
-              <h1 className="text-2xl lg:text-4xl font-semibold text-gray-100">
-                {items[currentIndex].title}
-              </h1>
+          <div className="w-full h-full flex flex-col items-center lg:justify-center lg:items-baseline lg:pl-12 slide-left">
+            <h1 className="text-xl lg:text-3xl font-semibold text-gray-100">
+              {items[currentIndex].title}
+            </h1>
 
-              <p className="text-sm text-gray-100 text-center w-[40ch] lg:w-[50ch] lg:text-left">
-                {items[currentIndex].subtitle}
-              </p>
+            <p className="text-sm text-gray-100 text-center w-[37ch] lg:w-[50ch] lg:text-left">
+              {items[currentIndex].subtitle}
+            </p>
 
-              <Link
-                className="inline-block bg-gray-100 text-emerald-600 font-semibold py-2 px-5 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out text-lg mt-7"
-                href={items[currentIndex].route}
-              >
-                <span className="inline-flex items-center justify-center gap-2 pt-1">
-                  <ProductIcon />
-                  <span className="pt-1">Ver Producto</span>
-                </span>
-              </Link>
-            </div>
+            <Link
+              className="inline-block bg-gray-100 text-emerald-600 font-semibold py-1 px-4 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out text-lg mt-5"
+              href={items[currentIndex].route}
+            >
+              <span className="inline-flex items-center justify-center gap-2 pt-1">
+                <ProductIcon />
+                <span className="pt-1">Ver Producto</span>
+              </span>
+            </Link>
           </div>
         </div>
       ) : (
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="bg-gray-300 w-[40%] h-[50%] rounded-lg animate-pulse"></div>
-        </div>
+        <div></div>
       )}
     </div>
   );
