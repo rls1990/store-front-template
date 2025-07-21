@@ -16,7 +16,10 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
         marcas={marcas}
         onChange={(filter) => console.log(filter)}
       />
-      <ProductsList categories={categories} />
+      <ProductsList
+        categories={categories}
+        onChange={(filter) => console.log(filter)}
+      />
     </div>
   );
 };

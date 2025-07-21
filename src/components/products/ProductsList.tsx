@@ -1,15 +1,30 @@
-import { CategoryData, data } from "@/data/categories";
+"use client";
+import { CategoryData } from "@/data/categories";
 import Image from "next/image";
-import { FC, useState } from "react";
-import { BiCategory, BiCategoryAlt } from "react-icons/bi";
+import { FC, useEffect, useState } from "react";
+import { BiCategoryAlt } from "react-icons/bi";
 import { FaAngleRight } from "react-icons/fa";
 
 interface ProductsListProps {
   categories: CategoryData[];
+  onChange?: (data: FilterValueData) => void;
 }
 
-const ProductsList: FC<ProductsListProps> = ({ categories }) => {
-  const [filter_categories_index, setFilter_categories_index] = useState(0);
+interface FilterValueData {
+  category?: string;
+  subcategory?: string;
+}
+
+const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
+  const [filter_categories_index, setFilter_categories_index] = useState(-1);
+  const [filter_subcategories_index, setFilter_subcategories_index] =
+    useState(-1);
+  const [filterValue, setFilterValue] = useState<FilterValueData>({});
+
+  useEffect(() => {
+    onChange?.(filterValue);
+  }, [filterValue]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]">
@@ -24,15 +39,23 @@ const ProductsList: FC<ProductsListProps> = ({ categories }) => {
                 <li key={item.nombre}>
                   <button
                     onClick={() => {
-                      setFilter_categories_index(index + 1);
-
-                      if (index + 1 == filter_categories_index)
-                        setFilter_categories_index(0);
+                      if (index == filter_categories_index) {
+                        setFilter_categories_index(-1);
+                        setFilterValue({});
+                      } else {
+                        setFilter_categories_index(index);
+                        setFilterValue({
+                          ...filterValue,
+                          category: item.nombre,
+                          subcategory: undefined,
+                        });
+                        setFilter_subcategories_index(-1);
+                      }
                     }}
                     className={
                       "w-full text-left px-4 py-2 rounded-md transition-all duration-200 cursor-pointer hover:bg-gray-200" +
                       `${
-                        filter_categories_index === index + 1 &&
+                        filter_categories_index === index &&
                         " bg-gray-100 text-[#06744f]"
                       }`
                     }
@@ -42,38 +65,41 @@ const ProductsList: FC<ProductsListProps> = ({ categories }) => {
                         width={500}
                         height={500}
                         alt="image categorie"
-                        className="size-16 rounded-full shadow-lg shadow-gray-300"
+                        className="size-14 rounded-full shadow-lg shadow-gray-300"
                         src={item.image}
                       />
                       {item.nombre}
                       <FaAngleRight
                         className={
                           "transition-transform duration-200" +
-                          `${
-                            filter_categories_index === index + 1 &&
-                            " rotate-90"
-                          }`
+                          `${filter_categories_index === index && " rotate-90"}`
                         }
                       />
                     </span>
                   </button>
 
                   <ul
-                    key={Date.now()}
                     className={
                       "mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in" +
-                      `${
-                        filter_categories_index == index + 1
-                          ? " h-auto"
-                          : " h-0"
-                      }`
+                      `${filter_categories_index == index ? " h-auto" : " h-0"}`
                     }
                   >
-                    {item.subcategories.map((subc, index) => (
-                      <li key={"subc" + index}>
+                    {item.subcategories.map((subc, index1) => (
+                      <li key={"subc" + index1}>
                         <button
+                          onClick={() => {
+                            setFilter_subcategories_index(index1);
+                            setFilterValue({
+                              ...filterValue,
+                              subcategory: subc,
+                            });
+                          }}
                           className={
-                            "w-full text-left px-2 py-1 rounded-md text-gray-600 hover:bg-gray-200 transition duration-150 pl-2 pr-2 pt-1 pb-1 text-sm cursor-pointer"
+                            "w-full text-left px-2 py-1 rounded-md text-gray-600 hover:bg-gray-200 transition duration-150 pl-2 pr-2 pt-1 pb-1 text-sm cursor-pointer" +
+                            `${
+                              index1 == filter_subcategories_index &&
+                              " bg-gray-200"
+                            }`
                           }
                         >
                           {subc}
