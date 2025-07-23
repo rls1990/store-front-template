@@ -112,7 +112,7 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
             </ul>
           </div>
         </aside>
-        <main className="lg:col-span-3">asd</main>
+        <main className="lg:col-span-3">asda</main>
       </div>
     </div>
   );
