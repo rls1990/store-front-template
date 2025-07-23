@@ -10,6 +10,7 @@ interface RatingProps {
   maxRating?: number;
   label?: string;
   className?: string;
+  readonly?: boolean;
 }
 
 export default function Rating({
@@ -18,6 +19,7 @@ export default function Rating({
   maxRating = 5,
   label = "Filtrar por calificación:",
   className,
+  readonly = false,
 }: RatingProps) {
   const [rating, setRating] = useState(initialRating);
   const [hoverRating, setHoverRating] = useState(0);
@@ -43,9 +45,9 @@ export default function Rating({
               key={index}
               type="button"
               className="focus:outline-none mr-1"
-              onClick={() => handleClick(ratingValue)}
-              onMouseEnter={() => setHoverRating(ratingValue)}
-              onMouseLeave={() => setHoverRating(0)}
+              onClick={() => !readonly && handleClick(ratingValue)}
+              onMouseEnter={() => !readonly && setHoverRating(ratingValue)}
+              onMouseLeave={() => !readonly && setHoverRating(0)}
               aria-label={`${ratingValue} ${
                 ratingValue === 1 ? "estrella" : "estrellas"
               }`}
@@ -61,18 +63,20 @@ export default function Rating({
           );
         })}
 
-        <button
-          onClick={() => {
-            setRating(0);
-            onChange?.(0);
-          }}
-          disabled={rating == 0}
-          className={`transition-all ${
-            rating > 0 ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <DeleteIcon />
-        </button>
+        {!readonly && (
+          <button
+            onClick={() => {
+              setRating(0);
+              onChange?.(0);
+            }}
+            disabled={rating == 0}
+            className={`transition-all ${
+              rating > 0 ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <DeleteIcon />
+          </button>
+        )}
       </div>
     </div>
   );

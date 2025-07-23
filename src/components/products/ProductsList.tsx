@@ -2,8 +2,10 @@
 import { CategoryData } from "@/data/categories";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
-import { BiCategoryAlt } from "react-icons/bi";
-import { FaAngleRight } from "react-icons/fa";
+import { BiCategoryAlt, BiSolidOffer } from "react-icons/bi";
+import { FaAngleRight, FaTags } from "react-icons/fa";
+import Rating from "../ui/fields/rating/Rating";
+import ProductCard from "./ProductCard";
 
 interface ProductsListProps {
   categories: CategoryData[];
@@ -112,7 +114,13 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
             </ul>
           </div>
         </aside>
-        <main className="lg:col-span-3">asda</main>
+        <main className="lg:col-span-3">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Nuestros Productos
+          </h2>
+
+          <ProductCard />
+        </main>
       </div>
     </div>
   );
