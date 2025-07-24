@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import StarIcon from "../../icons/StarIcon";
 import DeleteIcon from "../../icons/DeleteIcon";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 interface RatingProps {
   initialRating?: number;
@@ -52,13 +52,11 @@ export default function Rating({
                 ratingValue === 1 ? "estrella" : "estrellas"
               }`}
             >
-              <StarIcon
-                className={`h-6 w-6 ${
-                  ratingValue <= (hoverRating || rating)
-                    ? "[&_g]:stroke-yellow-400"
-                    : "[&_g]:stroke-gray-300"
-                }`}
-              />
+              {ratingValue <= (hoverRating || rating) ? (
+                <FaStar className="size-5 text-yellow-500" />
+              ) : (
+                <FaRegStar className="size-5 text-gray-400" />
+              )}
             </button>
           );
         })}

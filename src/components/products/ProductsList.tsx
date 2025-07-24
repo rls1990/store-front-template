@@ -118,8 +118,23 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Nuestros Productos
           </h2>
-
-          <ProductCard />
+          <ProductCard
+            data={{
+              name: "Auriculares Inalámbricos Pro",
+              category: "Electrónica",
+              subcategory: "Audio",
+              image:
+                "https://placehold.co/600x400/34D399/FFFFFF?text=Producto+1",
+              description:
+                "Sonido de alta fidelidad, cancelación de ruido y batería de larga duración.",
+              isNew: true,
+              isOffer: true,
+              number_comments: 120,
+              rating: 3,
+              url: "",
+              price: 190,
+            }}
+          />
         </main>
       </div>
     </div>

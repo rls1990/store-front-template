@@ -1,8 +1,25 @@
 import { BiSolidOffer } from "react-icons/bi";
 import { FaTags } from "react-icons/fa";
 import Rating from "../ui/fields/rating/Rating";
+import { FC } from "react";
 
-const ProductCard = () => {
+interface ProductCardProps {
+  data: {
+    name: string;
+    rating: number;
+    number_comments: number;
+    description: string;
+    category: string;
+    subcategory: string;
+    price: number;
+    url: string;
+    image?: string;
+    isNew?: boolean;
+    isOffer?: boolean;
+  };
+}
+
+const ProductCard: FC<ProductCardProps> = ({ data }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col">
@@ -31,8 +48,7 @@ const ProductCard = () => {
             Auriculares Inalámbricos Pro
           </h3>
           <div className="flex items-center mb-3">
-            <Rating initialRating={3} readonly />
-
+            <Rating initialRating={4.2} readonly label="" />
             <span className="ml-2 text-sm text-gray-600">(120 reseñas)</span>
           </div>
           <p className="text-gray-700 text-sm mb-4 flex-grow">
