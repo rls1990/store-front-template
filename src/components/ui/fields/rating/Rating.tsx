@@ -37,7 +37,7 @@ export default function Rating({
           {label}
         </label>
       )}
-      <div className="flex items-center [&_button]:cursor-pointer">
+      <div className="flex items-center justify-center [&_button]:cursor-pointer">
         {[...Array(maxRating)].map((_, index) => {
           const ratingValue = index + 1;
           return (
@@ -55,11 +55,13 @@ export default function Rating({
               {ratingValue <= (hoverRating || rating) ? (
                 <FaStar className="size-5 text-yellow-500" />
               ) : (
-                <FaRegStar className="size-5 text-gray-400" />
+                <FaStar className="size-5 text-gray-300" />
               )}
             </button>
           );
         })}
+
+        <p className="text-gray-700 text-sm">{rating}</p>
 
         {!readonly && (
           <button
