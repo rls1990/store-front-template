@@ -2,10 +2,10 @@
 import { CategoryData } from "@/data/categories";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
-import { BiCategoryAlt, BiSolidOffer } from "react-icons/bi";
-import { FaAngleRight, FaTags } from "react-icons/fa";
-import Rating from "../ui/fields/rating/Rating";
+import { BiCategoryAlt } from "react-icons/bi";
+import { FaAngleRight } from "react-icons/fa";
 import ProductCard from "./ProductCard";
+import { products } from "@/data/products";
 
 interface ProductsListProps {
   categories: CategoryData[];
@@ -118,23 +118,11 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Nuestros Productos
           </h2>
-          <ProductCard
-            data={{
-              name: "Auriculares Inalámbricos Pro",
-              category: "Electrónica",
-              subcategory: "Audio",
-              image:
-                "https://placehold.co/600x400/34D399/FFFFFF?text=Producto+1",
-              description:
-                "Sonido de alta fidelidad, cancelación de ruido y batería de larga duración.",
-              isNew: true,
-              isOffer: true,
-              number_comments: 120,
-              rating: 3,
-              url: "",
-              price: 190,
-            }}
-          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            {products.map((data) => (
+              <ProductCard key={data.id + "product"} data={data} />
+            ))}
+          </div>
         </main>
       </div>
     </div>

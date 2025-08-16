@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import DeleteIcon from "../../icons/DeleteIcon";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 interface RatingProps {
   initialRating?: number;
@@ -37,7 +37,7 @@ export default function Rating({
           {label}
         </label>
       )}
-      <div className="flex items-center justify-center [&_button]:cursor-pointer">
+      <div className="flex items-center justify-start [&_button]:cursor-pointer">
         {[...Array(maxRating)].map((_, index) => {
           const ratingValue = index + 1;
           return (
@@ -61,7 +61,7 @@ export default function Rating({
           );
         })}
 
-        <p className="text-gray-700 text-sm">{rating}</p>
+        {/* <p className="text-gray-700 text-sm font-semibold">{rating}</p> */}
 
         {!readonly && (
           <button
