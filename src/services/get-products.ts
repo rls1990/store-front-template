@@ -1,5 +1,5 @@
-import { data } from "@/data/products"
+import { products } from "@/data/products";
 
-export const getProducts=async()=>{
-    return data;
-}
+export const getProducts = async () => {
+  return products;
+};
