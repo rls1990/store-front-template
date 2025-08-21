@@ -3,9 +3,10 @@ import { CategoryData } from "@/data/categories";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
-import { FaAngleRight, FaPlus } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 import { products } from "@/data/products";
+import { TbCategoryPlus } from "react-icons/tb";
 
 interface ProductsListProps {
   categories: CategoryData[];
@@ -129,7 +130,7 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
           {visible_product < products.length && (
             <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer" onClick={showMoreProducts}>
               Mostrar más
-              <FaPlus className="animate-pulse" />
+              <TbCategoryPlus size={24} className="animate-pulse" />
             </button>
           )}
         </main>

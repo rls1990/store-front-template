@@ -125,7 +125,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
             </p>
 
             <Link
-              className="inline-block bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-1 px-4 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out text-lg mt-5"
+              className="inline-block bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-1 px-4 rounded-full shadow-md transition-all duration-300 ease-in-out text-lg mt-5 hover:scale-105"
               href={items[currentIndex].route}
             >
               <span className="inline-flex items-center justify-center gap-2 p-2">
