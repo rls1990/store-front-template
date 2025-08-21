@@ -3,7 +3,7 @@ import { CategoryData } from "@/data/categories";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
-import { FaAngleRight, FaArrowDown, FaPlus } from "react-icons/fa";
+import { FaAngleRight, FaPlus } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 import { products } from "@/data/products";
 
