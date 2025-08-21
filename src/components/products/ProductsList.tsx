@@ -3,7 +3,7 @@ import { CategoryData } from "@/data/categories";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaArrowDown, FaPlus } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 import { products } from "@/data/products";
 
@@ -23,6 +23,12 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
     useState(-1);
   const [filterValue, setFilterValue] = useState<FilterValueData>({});
 
+  const [visible_product, setVisibleProduct] = useState(5);
+
+  const showMoreProducts = () => {
+    setVisibleProduct(prevVisible => prevVisible + 5);
+  };
+
   useEffect(() => {
     onChange?.(filterValue);
   }, [filterValue]);
@@ -32,7 +38,7 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
       <div className="lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]">
         <aside className="lg:col-span-1 mb-8 lg:mb-0">
           <div className="bg-white shadow-md sticky top-24 h-[510px] overflow-y-auto rounded-lg">
-            <h3 className="text-lg font-semibold text-white sticky top-0 left-0 right-0 p-3 shadow-md inline-flex w-full items-center justify-center z-30 bg-gradient-to-r from-emerald-500 to-teal-600">
+            <h3 className="text-lg font-semibold text-white sticky top-0 left-0 right-0 p-3 shadow-md inline-flex items-center justify-center gap-2 w-full z-30 bg-gradient-to-r from-emerald-500 to-teal-600">
               <BiCategoryAlt className="size-6" />
               Categorías
             </h3>
@@ -117,10 +123,16 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
             Nuestros Productos
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7">
-            {products.map((data) => (
+            {products.slice(0, visible_product).map((data) => (
               <ProductCard key={data.id + "product"} data={data} />
             ))}
           </div>
+          {visible_product < products.length && (
+            <button className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-800 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-emerald-300 mt-10" onClick={showMoreProducts}>
+              Mostrar más
+              <FaPlus className="animate-pulse" />
+            </button>
+          )}
         </main>
       </div>
     </div>
