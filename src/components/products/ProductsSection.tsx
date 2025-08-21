@@ -1,6 +1,6 @@
 "use client";
 import { FC, useRef } from "react";
-import ProductFilter, { FilterData } from "../ui/filter/ProductFilter";
+import ProductFilter from "../ui/filter/ProductFilter";
 import ProductsList from "./ProductsList";
 import { CategoryData } from "@/data/categories";
 
@@ -9,8 +9,15 @@ interface ProductsSectionProps {
   categories: CategoryData[];
 }
 
-interface FilterProps extends FilterData{
-
+interface FilterProps {
+  nombre?: string;
+  fecha_publicacion?: string;
+  color?: string;
+  rango_precio: { min: number; max: number };
+  marca: string;
+  rating: number;
+  category?: string;
+  subcategory?: string;
 }
 
 const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
@@ -19,11 +26,11 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
     <div>
       <ProductFilter
         marcas={marcas}
-        onChange={(filter) =>{console.log(filter);filterR.current={...filter}} }
+        onChange={(filter) => { console.log(filter); filterR.current = { ...filter } }}
       />
       <ProductsList
         categories={categories}
-        onChange={(filter) => {console.log(filter)}}
+        onChange={(filter) => { console.log(filter) }}
       />
     </div>
   );

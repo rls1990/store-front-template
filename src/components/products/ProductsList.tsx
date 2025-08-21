@@ -12,7 +12,7 @@ interface ProductsListProps {
   onChange?: (data: FilterValueData) => void;
 }
 
-interface FilterValueData {
+export interface FilterValueData {
   category?: string;
   subcategory?: string;
 }
