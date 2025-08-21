@@ -87,8 +87,7 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
 
                   <ul
                     className={
-                      "mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in" +
-                      `${filter_categories_index == index ? " h-auto" : " h-0"}`
+                      `mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in transition-all duration-300${filter_categories_index == index ? " h-60" : " h-0"}`
                     }
                   >
                     {item.subcategories.map((subc, index1) => (
