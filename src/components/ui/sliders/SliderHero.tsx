@@ -6,7 +6,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
 import Link from "next/link";
-import ProductIcon from "../icons/ProductIcon";
+import { FaBox } from "react-icons/fa";
 
 interface SliderHeroProps {
   items: ItemSlider[];
@@ -66,9 +66,8 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
   }, [currentIndex]);
 
   if (!items || items.length === 0) return null;
-
   return (
-    <div className="w-full h-[83vh] relative bg-gradient-to-r from-emerald-500 to-teal-600">
+    <div className="w-full h-[83vh] relative">
       {/* left right buttons */}
       <button
         className="cursor-pointer transition-all active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[55%] sm:right-auto sm:top-[40%] sm:rotate-0 opacity-70 z-40"
@@ -93,8 +92,8 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
               key={index + "progi"}
               className={
                 index == currentIndex
-                  ? "p-1 scale-200 bg-gray-300 rounded-full hover:bg-gray-200 cursor-pointer transition-all"
-                  : "p-1 bg-gray-300 rounded-full hover:bg-gray-200 hover:scale-150 cursor-pointer transition-all"
+                  ? "p-2 bg-emerald-700 rounded-full hover:bg-emerald-700/50 cursor-pointer transition-all"
+                  : "p-1.5 bg-gray-300 rounded-full hover:bg-emerald-700/50 hover:scale-150 cursor-pointer transition-all"
               }
               onClick={() => setCurrentIndex(index)}
             />
@@ -119,20 +118,20 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
           </div>
 
           <div className="w-full h-full flex flex-col items-center lg:justify-center lg:items-baseline lg:pl-12 slide-left">
-            <h1 className="text-xl lg:text-3xl font-semibold text-gray-100">
+            <h1 className="text-xl lg:text-4xl font-semibold text-emerald-700">
               {items[currentIndex].title}
             </h1>
 
-            <p className="text-sm text-gray-100 text-center w-[37ch] lg:w-[50ch] lg:text-left">
+            <p className="text-sm text-emerald-700 text-center w-[37ch] lg:w-[50ch] lg:text-left">
               {items[currentIndex].subtitle}
             </p>
 
             <Link
-              className="inline-block bg-gray-100 text-emerald-600 font-semibold py-1 px-4 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out text-lg mt-5"
+              className="inline-block bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-1 px-4 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out text-lg mt-5"
               href={items[currentIndex].route}
             >
-              <span className="inline-flex items-center justify-center gap-2 pt-1">
-                <ProductIcon />
+              <span className="inline-flex items-center justify-center gap-2 p-2">
+                <FaBox className="text-white" />
                 <span className="pt-1">Ver Producto</span>
               </span>
             </Link>
