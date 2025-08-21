@@ -9,7 +9,7 @@ import { PriceRange } from "../fields/range/PriceRange";
 import Rating from "../fields/rating/Rating";
 import FilterSearchIcon from "../icons/FilterSearchIcon";
 
-interface FilterData {
+export interface FilterData {
   nombre?: string;
   fecha_publicacion?: string;
   color?: string;

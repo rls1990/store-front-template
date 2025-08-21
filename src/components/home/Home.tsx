@@ -11,6 +11,7 @@ const Home = async () => {
 
   return (
     <div>
+      Homeeeeeeeee
       <SliderHero items={sliderItemsHero} />
       <ProductsSection marcas={marcas} categories={categories} />
     </div>

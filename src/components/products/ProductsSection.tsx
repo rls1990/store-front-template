@@ -1,6 +1,6 @@
 "use client";
-import { FC } from "react";
-import ProductFilter from "../ui/filter/ProductFilter";
+import { FC, useRef, useState } from "react";
+import ProductFilter, { FilterData } from "../ui/filter/ProductFilter";
 import ProductsList from "./ProductsList";
 import { CategoryData } from "@/data/categories";
 
@@ -9,7 +9,12 @@ interface ProductsSectionProps {
   categories: CategoryData[];
 }
 
+interface FilterProps extends FilterData{
+
+}
+
 const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
+  const filter = useRef<FilterProps | null>(null)
   return (
     <div>
       <ProductFilter
