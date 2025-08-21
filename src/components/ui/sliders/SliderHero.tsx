@@ -3,8 +3,6 @@
 import { ItemSlider } from "@/data/slider-hero";
 import Image from "next/image";
 import { FC, ReactNode, useEffect, useState } from "react";
-import LeftArrow from "../icons/LeftArrow";
-import RightArrow from "../icons/RightArrow";
 import Link from "next/link";
 import { FaBox, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
