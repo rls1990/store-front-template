@@ -6,7 +6,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
 import Link from "next/link";
-import { FaBox } from "react-icons/fa";
+import { FaBox, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface SliderHeroProps {
   items: ItemSlider[];
@@ -74,14 +74,14 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         onClick={prevIndex}
         disabled={images && images && images.length > 0 ? false : true}
       >
-        <LeftArrow className="size-12" />
+        <FaChevronLeft className="size-12 text-gray-400 hover:text-gray-700 transition-all" />
       </button>
       <button
         className="cursor-pointer transition-all active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[40%] sm:right-0 sm:top-[40%] sm:rotate-0 opacity-70 hover:opacity-90 z-40"
         onClick={nextIndex}
         disabled={images && images && images.length > 0 ? false : true}
       >
-        <RightArrow className="size-12" />
+        <FaChevronRight className="size-12 text-gray-400 hover:text-gray-700 transition-all" />
       </button>
 
       {/*Progress Indicators */}
