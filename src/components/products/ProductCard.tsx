@@ -11,10 +11,10 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ data }) => {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg flex flex-col">
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl flex flex-col transition-all duration-300 hover:scale-107">
       <div className="relative overflow-hidden">
         <Image
-          className="w-full h-56 object-cover transition-transform duration-300 ease-in-out hover:scale-107 hover:rotate-3"
+          className="w-full h-56 object-cover transition-transform duration-300 ease-in-out hover:scale-112 hover:rotate-3"
           width={500}
           height={500}
           src={data.image}

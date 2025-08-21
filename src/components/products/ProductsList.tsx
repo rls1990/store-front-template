@@ -31,12 +31,12 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]">
         <aside className="lg:col-span-1 mb-8 lg:mb-0">
-          <div className="bg-white shadow-md sticky top-24 h-[400px] overflow-y-auto rounded-lg">
-            <h3 className="text-lg font-semibold text-gray-500 backdrop-blur-lg sticky top-0 left-0 right-0 p-3 shadow-md inline-flex w-full items-center justify-center z-10">
+          <div className="bg-white shadow-md sticky top-24 h-[510px] overflow-y-auto rounded-lg">
+            <h3 className="text-lg font-semibold text-white sticky top-0 left-0 right-0 p-3 shadow-md inline-flex w-full items-center justify-center z-30 bg-gradient-to-r from-emerald-500 to-teal-600">
               <BiCategoryAlt className="size-6" />
               Categorías
             </h3>
-            <ul className="space-y-2 overflow-y-auto text-gray-700 px-3 py-3">
+            <ul className="space-y-2 text-gray-700 px-3 py-3">
               {categories.map((item, index) => (
                 <li key={item.nombre}>
                   <button
@@ -56,9 +56,8 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
                     }}
                     className={
                       "w-full text-left px-4 py-2 rounded-md transition-all duration-200 cursor-pointer hover:bg-gray-200" +
-                      `${
-                        filter_categories_index === index &&
-                        " bg-gray-100 text-[#06744f]"
+                      `${filter_categories_index === index &&
+                      " bg-gray-100 text-[#06744f]"
                       }`
                     }
                   >
@@ -98,9 +97,8 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
                           }}
                           className={
                             "w-full text-left px-2 py-1 rounded-md text-gray-600 hover:bg-gray-200 transition duration-150 pl-2 pr-2 pt-1 pb-1 text-sm cursor-pointer" +
-                            `${
-                              index1 == filter_subcategories_index &&
-                              " bg-gray-200"
+                            `${index1 == filter_subcategories_index &&
+                            " bg-gray-200"
                             }`
                           }
                         >
@@ -115,10 +113,10 @@ const ProductsList: FC<ProductsListProps> = ({ categories, onChange }) => {
           </div>
         </aside>
         <main className="lg:col-span-3">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl lg:text-3xl font-bold text-emerald-700 text-center mb-6">
             Nuestros Productos
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7">
             {products.map((data) => (
               <ProductCard key={data.id + "product"} data={data} />
             ))}

@@ -77,7 +77,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
         <LeftArrow className="size-12" />
       </button>
       <button
-        className="cursor-pointer transition-all   active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[40%] sm:right-0 sm:top-[40%] sm:rotate-0 opacity-70 hover:opacity-90 z-40"
+        className="cursor-pointer transition-all active:scale-90 m-3 rounded-2xl absolute right-0 -rotate-90 top-[40%] sm:right-0 sm:top-[40%] sm:rotate-0 opacity-70 hover:opacity-90 z-40"
         onClick={nextIndex}
         disabled={images && images && images.length > 0 ? false : true}
       >
@@ -85,7 +85,7 @@ const SliderHero: FC<SliderHeroProps> = ({ items, interval = 10000 }) => {
       </button>
 
       {/*Progress Indicators */}
-      <span className="absolute bottom-7 w-full flex items-center justify-center gap-3 z-40">
+      <span className="absolute bottom-3 w-full flex items-center justify-center gap-3 z-40">
         {images && images && images?.length > 0 ? (
           items.map((_item, index) => (
             <button

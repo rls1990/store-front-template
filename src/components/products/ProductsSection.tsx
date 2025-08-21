@@ -13,9 +13,9 @@ interface FilterProps {
   nombre?: string;
   fecha_publicacion?: string;
   color?: string;
-  rango_precio: { min: number; max: number };
-  marca: string;
-  rating: number;
+  rango_precio?: { min: number; max: number };
+  marca?: string;
+  rating?: number;
   category?: string;
   subcategory?: string;
 }
@@ -26,11 +26,13 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
     <div>
       <ProductFilter
         marcas={marcas}
-        onChange={(filter) => { console.log(filter); filterR.current = { ...filter } }}
+        onChange={(filter) => { filterR.current = { ...filterR.current, ...filter }; }}
       />
       <ProductsList
         categories={categories}
-        onChange={(filter) => { console.log(filter) }}
+        onChange={(filter) => {
+          filterR.current = { ...filterR.current, category: filter.category, subcategory: filter.subcategory };
+        }}
       />
     </div>
   );
