@@ -11,7 +11,45 @@ export interface ProductData {
   isNew?: boolean;
   isOffer?: boolean;
   priceOffer?: number;
+  marca: string;
+  colors: string[];
 }
+
+// Creación de arreglos para marcas y colores
+// Arreglo de marcas únicas usadas
+export const marcas: string[] = [
+  "Samsung",
+  "Xiaomi",
+  "Huawei",
+  "Realme",
+  "Motorola",
+  "Oppo",
+  "Honor",
+  "Apple",
+  "Dell",
+  "Asus",
+  "Lenovo",
+  "Acer",
+  "MSI",
+  "HP",
+  "Amazon",
+  "Bose",
+  "JBL",
+  "Sony",
+];
+
+export const colors: string[] = [
+  "Negro",
+  "Blanco",
+  "Azul",
+  "Rojo",
+  "Gris",
+  "Dorado",
+  "Plateado",
+  "Verde",
+  "Amarillo",
+  "Rosa",
+];
 
 export const products: ProductData[] = [
   {
@@ -25,6 +63,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 499,
     image: "/products/Smartphone Alpha X100.jpg",
+    marca: "samsung",
+    colors: ["negro", "blanco", "azul"],
     isNew: true,
   },
   {
@@ -38,6 +78,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 399,
     image: "/products/Telefono Beta Pro.jpg",
+    marca: "xiaomi",
+    colors: ["gris", "negro", "rojo"],
   },
   {
     id: 3,
@@ -49,6 +91,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 599,
     image: "/products/Celular Gamma 5G.jpg",
+    marca: "huawei",
+    colors: ["negro", "plateado"],
     isOffer: true,
     priceOffer: 549,
   },
@@ -62,6 +106,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 299,
     image: "/products/Smartphone Delta Mini.jpg",
+    marca: "realme",
+    colors: ["azul", "blanco"],
   },
   {
     id: 5,
@@ -73,6 +119,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 450,
     image: "/products/Phone Zeta Plus.jpg",
+    marca: "motorola",
+    colors: ["negro", "gris"],
   },
   {
     id: 6,
@@ -84,6 +132,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 420,
     image: "/products/Smartphone Epsilon S.jpg",
+    marca: "oppo",
+    colors: ["blanco", "negro", "rojo"],
   },
   {
     id: 7,
@@ -95,6 +145,8 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 350,
     image: "/products/Teléfono Theta Max.jpg",
+    marca: "honor",
+    colors: ["negro", "azul"],
   },
   {
     id: 8,
@@ -107,9 +159,9 @@ export const products: ProductData[] = [
     subcategory: "Smartphones",
     price: 480,
     image: "/products/Smartphone Iota Pro.jpg",
+    marca: "apple",
+    colors: ["negro", "blanco", "dorado"],
   },
-
-  // Laptops
   {
     id: 9,
     name: "Laptop UltraBook 15",
@@ -120,6 +172,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 1200,
     image: "/products/Laptop UltraBook 15.jpg",
+    marca: "dell",
+    colors: ["gris", "negro"],
     isNew: true,
   },
   {
@@ -133,6 +187,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 1800,
     image: "/products/Notebook Gamer GX.jpg",
+    marca: "asus",
+    colors: ["negro", "rojo"],
   },
   {
     id: 11,
@@ -145,6 +201,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 1100,
     image: "/products/Laptop Business Pro.jpg",
+    marca: "lenovo",
+    colors: ["gris", "negro"],
   },
   {
     id: 12,
@@ -156,6 +214,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 650,
     image: "/products/Laptop Student Light.jpg",
+    marca: "acer",
+    colors: ["negro", "azul"],
   },
   {
     id: 13,
@@ -167,6 +227,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 2100,
     image: "/products/Laptop Creator 16.jpg",
+    marca: "apple",
+    colors: ["gris", "negro"],
   },
   {
     id: 14,
@@ -179,6 +241,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 1300,
     image: "/products/Laptop ZenBook S.jpg",
+    marca: "asus",
+    colors: ["azul", "negro"],
     isOffer: true,
     priceOffer: 1199,
   },
@@ -192,6 +256,8 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 2500,
     image: "/products/Gaming Laptop Titan.jpg",
+    marca: "msi",
+    colors: ["negro", "rojo"],
   },
   {
     id: 16,
@@ -203,9 +269,9 @@ export const products: ProductData[] = [
     subcategory: "Laptops",
     price: 500,
     image: "/products/Laptop Basic Model.jpg",
+    marca: "hp",
+    colors: ["gris", "negro"],
   },
-
-  // Tablets
   {
     id: 17,
     name: "Tablet Aura 10",
@@ -217,6 +283,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 350,
     image: "/products/Tablet Aura 10.jpg",
+    marca: "samsung",
+    colors: ["negro", "blanco", "gris"],
   },
   {
     id: 18,
@@ -229,6 +297,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 650,
     image: "/products/Tablet Pro Max.jpg",
+    marca: "apple",
+    colors: ["gris", "blanco", "plateado"],
     isNew: true,
   },
   {
@@ -241,6 +311,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 280,
     image: "/products/Tablet Mini Light.jpg",
+    marca: "amazon",
+    colors: ["blanco", "gris"],
   },
   {
     id: 20,
@@ -253,6 +325,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 700,
     image: "/products/Tablet Plus 12.jpg",
+    marca: "samsung",
+    colors: ["blanco", "negro", "azul"],
   },
   {
     id: 21,
@@ -264,6 +338,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 250,
     image: "/products/Tablet Basic Model.jpg",
+    marca: "lenovo",
+    colors: ["gris", "negro"],
   },
   {
     id: 22,
@@ -275,6 +351,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 600,
     image: "/products/Tablet Gamer X.jpg",
+    marca: "asus",
+    colors: ["negro", "rojo"],
   },
   {
     id: 23,
@@ -286,6 +364,8 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 720,
     image: "/products/Tablet Artist Pro.jpg",
+    marca: "apple",
+    colors: ["blanco", "gris", "negro"],
     isOffer: true,
     priceOffer: 680,
   },
@@ -299,9 +379,9 @@ export const products: ProductData[] = [
     subcategory: "Tablets",
     price: 300,
     image: "/products/Tablet Family.jpg",
+    marca: "samsung",
+    colors: ["negro", "gris", "azul"],
   },
-
-  // Audio
   {
     id: 25,
     name: "Auriculares Bluetooth Pro",
@@ -312,6 +392,8 @@ export const products: ProductData[] = [
     subcategory: "Audio",
     price: 150,
     image: "/products/Auriculares Bluetooth Pro.jpg",
+    marca: "bose",
+    colors: ["negro", "blanco"],
   },
   {
     id: 26,
@@ -323,6 +405,8 @@ export const products: ProductData[] = [
     subcategory: "Audio",
     price: 120,
     image: "/products/Parlante Portátil MaxSound.jpg",
+    marca: "jbl",
+    colors: ["negro", "azul"],
   },
   {
     id: 27,
@@ -334,6 +418,8 @@ export const products: ProductData[] = [
     subcategory: "Audio",
     price: 300,
     image: "/products/Barra de Sonido Home Cinema.jpg",
+    marca: "sony",
+    colors: ["negro", "gris"],
   },
   {
     id: 28,
@@ -345,6 +431,8 @@ export const products: ProductData[] = [
     subcategory: "Audio",
     price: 80,
     image: "/products/Auriculares Deportivos FitSound.jpg",
+    marca: "jbl",
+    colors: ["negro", "verde"],
     isNew: true,
   },
   {
@@ -357,6 +445,8 @@ export const products: ProductData[] = [
     subcategory: "Audio",
     price: 50,
     image: "/products/Parlante Bluetooth Mini.jpg",
+    marca: "sony",
+    colors: ["negro", "blanco"],
   },
   // {
   //   //------------------
