@@ -147,6 +147,8 @@ export const products: ProductData[] = [
     image: "/products/Teléfono Theta Max.jpg",
     marca: "honor",
     colors: ["negro", "azul"],
+    isOffer: true,
+    priceOffer: 300,
   },
   {
     id: 8,

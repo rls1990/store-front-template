@@ -4,6 +4,7 @@ import Rating from "../ui/fields/rating/Rating";
 import { FC } from "react";
 import Image from "next/image";
 import { ProductData } from "@/data/products";
+import Link from "next/link";
 
 interface ProductCardProps {
   data: ProductData;
@@ -75,12 +76,12 @@ const ProductCard: FC<ProductCardProps> = ({ data }) => {
           )}
         </div>
 
-        <a
-          href="#"
+        <Link
+          href={`/products/${data.id}`}
           className="mt-auto block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center font-semibold py-2 px-4 rounded-lg transition duration-150"
         >
           Ver Detalles
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -10,13 +10,14 @@ import { PriceRange } from "../ui/fields/range/PriceRange";
 import Rating from "../ui/fields/rating/Rating";
 import { BiCategoryAlt } from "react-icons/bi";
 import Image from "next/image";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaBoxOpen } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 import { TbCategoryPlus } from "react-icons/tb";
 import { ProductData, products } from "@/data/products";
 import { FcClearFilters } from "react-icons/fc";
 import { MdClear } from "react-icons/md";
 import { FaFilterCircleXmark } from "react-icons/fa6";
+import Link from "next/link";
 
 interface ProductsSectionProps {
   marcas: string[];
@@ -310,19 +311,42 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
             </div>
           </aside>
           <main key={keyProducts} className="lg:col-span-3">
-            <h2 className="text-2xl lg:text-3xl font-bold text-emerald-700 text-center mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold text-emerald-700 text-center mb-12">
               Nuestros Productos
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7">
-              {filteredProductsData.slice(0, visible_product).map((data) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 relative min-h-dvh">
+              {filteredProductsData.length > 0 ? filteredProductsData.slice(0, visible_product).map((data) => (
                 <ProductCard key={data.id + "product"} data={data} />
-              ))}
+              )) : <div className="text-center text-gray-500 mt-8 absolute top-0 left-1/5 fade-in">
+                <div className="flex flex-col items-center justify-center bg-gray-50 p-6">
+                  <FaBoxOpen className="text-gray-400 text-9xl mb-6" />
+                  <h2 className="text-3xl font-semibold text-gray-700 mb-2">No se encontraron productos</h2>
+                  <p className="text-gray-500 max-w-md text-center">
+                    Lo sentimos, no hay productos disponibles en este momento. Por favor, intenta nuevamente más tarde.
+                  </p>
+                </div>
+              </div>}
             </div>
             {visible_product < filteredProductsData.length && (
               <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer" onClick={showMoreProducts}>
                 Mostrar más
                 <TbCategoryPlus size={24} className="animate-pulse" />
               </button>
+            )}
+
+            <h2 className="text-2xl lg:text-3xl font-bold text-emerald-700 text-center mb-12 mt-12">
+              Ofertas Especiales
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 relative">
+              {
+                products.filter((data) => data.isOffer).slice(0, 3).map(data => <ProductCard key={data.id + "product"} data={data} />)
+              }
+            </div>
+            {products.filter((data) => data.isOffer).length > 3 && (
+              <Link className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer w-60" href="/offers">
+                Mostrar más ofertas
+                <TbCategoryPlus size={24} className="animate-pulse" />
+              </Link>
             )}
           </main>
         </div>
