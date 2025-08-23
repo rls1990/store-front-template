@@ -14,8 +14,6 @@ import { FaAngleRight, FaBoxOpen } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 import { TbCategoryPlus } from "react-icons/tb";
 import { ProductData, products } from "@/data/products";
-import { FcClearFilters } from "react-icons/fc";
-import { MdClear } from "react-icons/md";
 import { FaFilterCircleXmark } from "react-icons/fa6";
 import Link from "next/link";
 
