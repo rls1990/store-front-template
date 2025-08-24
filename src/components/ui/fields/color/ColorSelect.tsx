@@ -3,8 +3,9 @@
 import { FC, useState } from "react";
 import DeleteIcon from "../../icons/DeleteIcon";
 
+// ("rojo" | "azul" | "verde" | "amarillo" | "negro" | "blanco")
 interface ColorSelectProps {
-  listcolors: ("rojo" | "azul" | "verde" | "amarillo" | "negro" | "blanco")[];
+  listcolors: string[];
   className?: string;
   onChange?: (color: string) => void;
 }
@@ -29,7 +30,7 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("rojo");
             }}
             className={
-              "h-6 w-6 rounded-full border border-gray-300 bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-400 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-400 transition-all" +
               `${colorIndex == 1 && " ring-2 ring-offset-1 ring-red-400"}`
             }
           ></button>
@@ -41,7 +42,7 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("azul");
             }}
             className={
-              "h-6 w-6 rounded-full border border-gray-300 bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-400 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-400 transition-all" +
               `${colorIndex == 2 && " ring-2 ring-offset-1 ring-blue-400"}`
             }
           ></button>
@@ -54,7 +55,7 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("verde");
             }}
             className={
-              "h-6 w-6 rounded-full border border-gray-300 bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-green-400 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-green-400 transition-all" +
               `${colorIndex == 3 && " ring-2 ring-offset-1 ring-green-500"}`
             }
           ></button>
@@ -67,7 +68,7 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("amarillo");
             }}
             className={
-              "h-6 w-6 rounded-full border border-gray-300 bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-yellow-300 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-yellow-300 transition-all" +
               `${colorIndex == 4 && " ring-2 ring-offset-1 ring-yellow-400"}`
             }
           ></button>
@@ -80,7 +81,7 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("negro");
             }}
             className={
-              "h-6 w-6 rounded-full border border-gray-300 bg-black focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-500 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-black focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-500 transition-all" +
               `${colorIndex == 5 && " ring-2 ring-offset-1 ring-black"}`
             }
           ></button>
@@ -93,7 +94,20 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("blanco");
             }}
             className={
-              "h-6 w-6 rounded-full border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-300 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-300 transition-all" +
+              `${colorIndex == 6 && " ring-2 ring-offset-1 ring-gray-300"}`
+            }
+          ></button>
+        )}
+
+        {listcolors.findIndex((value) => value == "gris") !== -1 && (
+          <button
+            onClick={() => {
+              setColorIndex(6);
+              onChange?.("gris");
+            }}
+            className={
+              "h-7 w-7 rounded-full border border-gray-300 bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-300 transition-all" +
               `${colorIndex == 6 && " ring-2 ring-offset-1 ring-gray-300"}`
             }
           ></button>
@@ -101,9 +115,8 @@ const ColorSelect: FC<ColorSelectProps> = ({
 
         <button
           disabled={colorIndex == -1}
-          className={`transition-all ${
-            colorIndex != -1 ? "opacity-100" : "opacity-0"
-          }`}
+          className={`transition-all ${colorIndex != -1 ? "opacity-100" : "opacity-0"
+            }`}
           onClick={() => setColorIndex(-1)}
         >
           <DeleteIcon />
