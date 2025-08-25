@@ -30,7 +30,7 @@ const ColorSelect: FC<ColorSelectProps> = ({
               onChange?.("rojo");
             }}
             className={
-              "h-7 w-7 rounded-full border border-gray-300 bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-400 transition-all" +
+              "h-7 w-7 rounded-full border border-gray-300 bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-400 transition-all cursor-default" +
               `${colorIndex == 1 && " ring-2 ring-offset-1 ring-red-400"}`
             }
           ></button>
@@ -113,14 +113,11 @@ const ColorSelect: FC<ColorSelectProps> = ({
           ></button>
         )}
 
-        <button
-          disabled={colorIndex == -1}
-          className={`transition-all ${colorIndex != -1 ? "opacity-100" : "opacity-0"
-            }`}
-          onClick={() => setColorIndex(-1)}
-        >
-          <DeleteIcon />
-        </button>
+        {colorIndex != -1 && (
+          <button onClick={() => setColorIndex(-1)}>
+            <DeleteIcon />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -39,8 +39,8 @@ const initFilter: FilterProps = {
   marca: "",
   rating: 0,
   category: "",
-  subcategory: ""
-}
+  subcategory: "",
+};
 
 const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
   const [openMenuFulter, setOpenMenuFulter] = useState(false);
@@ -49,18 +49,22 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
   const [filter_subcategories_index, setFilter_subcategories_index] =
     useState(-1);
 
-  const [filteredProductsData, setFilteredProducts] = useState<ProductData[]>(products);
+  const [filteredProductsData, setFilteredProducts] =
+    useState<ProductData[]>(products);
 
   const [visible_product, setVisibleProduct] = useState(5);
   const showMoreProducts = () => {
-    setVisibleProduct(prevVisible => prevVisible + 5);
+    setVisibleProduct((prevVisible) => prevVisible + 5);
   };
 
-  const [keyProducts, setKeyProducts] = useState("listp" + Date.now())
-  const [keyResetFilters, setResetFilters] = useState("filt" + Date.now())
+  const [keyProducts, setKeyProducts] = useState("listp" + Date.now());
+  const [keyResetFilters, setResetFilters] = useState("filt" + Date.now());
 
   const filterProducts = (product: ProductData) => {
-    if (filter.current.nombre && !product.name.toLowerCase().includes(filter.current.nombre.toLowerCase()))
+    if (
+      filter.current.nombre &&
+      !product.name.toLowerCase().includes(filter.current.nombre.toLowerCase())
+    )
       return false;
 
     if (filter.current.rating && product.rating < filter.current.rating)
@@ -69,37 +73,37 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
     if (filter.current.category && product.category !== filter.current.category)
       return false;
 
-    if (filter.current.subcategory && product.subcategory !== filter.current.subcategory)
+    if (
+      filter.current.subcategory &&
+      product.subcategory !== filter.current.subcategory
+    )
       return false;
 
     if (filter.current.rango_precio) {
-      if (product.price < filter.current.rango_precio.min)
-        return false;
+      if (product.price < filter.current.rango_precio.min) return false;
 
-      if (product.price > filter.current.rango_precio.max)
-        return false;
+      if (product.price > filter.current.rango_precio.max) return false;
     }
 
     if (filter.current.color) {
       const colorLower = filter.current.color.toLowerCase();
-      const productColorsLower = product.colors.map(c => c.toLowerCase());
+      const productColorsLower = product.colors.map((c) => c.toLowerCase());
       if (!productColorsLower.includes(colorLower)) return false;
     }
 
     if (filter.current.marca) {
-      if (product.marca.toLowerCase() !== filter.current.marca.toLowerCase()) return false;
+      if (product.marca.toLowerCase() !== filter.current.marca.toLowerCase())
+        return false;
     }
 
     return true;
   };
 
-
   useEffect(() => {
     const data = products.filter((val) => filterProducts(val));
     setFilteredProducts(data);
     setVisibleProduct(5);
-  }, [filter.current])
-
+  }, [filter.current]);
 
   return (
     <div>
@@ -114,13 +118,16 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                 id="search-input"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
-                    console.log(filter)
+                    console.log(filter);
                     setKeyProducts("listp" + Date.now());
                   }
                 }}
-                onChange={(e) => { filter.current = { ...filter.current, nombre: e.target.value }; }
-
-                }
+                onChange={(e) => {
+                  filter.current = {
+                    ...filter.current,
+                    nombre: e.target.value,
+                  };
+                }}
                 placeholder="Buscar por nombre..."
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-150 ease-in-out placeholder:text-[15px]"
               />
@@ -149,7 +156,8 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
               <ChevronDownIcon
                 className={
                   "size-5 mr-1" +
-                  ` transition-transform ${openMenuFulter ? "rotate-0" : "-rotate-90"
+                  ` transition-transform ${
+                    openMenuFulter ? "rotate-0" : "-rotate-90"
                   }`
                 }
               />
@@ -165,8 +173,10 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
             <h4 className="text-[16px] font-semibold text-gray-700 mb-3 border-b border-b-gray-300 pb-2 m-4 pl-8">
               Opciones de Filtro
             </h4>
-            <div className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7 border-b border-b-gray-300 pb-5" key={keyResetFilters}>
-
+            <div
+              className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7 border-b border-b-gray-300 pb-5"
+              key={keyResetFilters}
+            >
               <Select
                 title="Marca"
                 items={marcas ? marcas : ["Marca A", "Marca B", "Marca C"]}
@@ -175,16 +185,15 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                   (filter.current = { ...filter.current, marca: value })
                 }
               />
-              <div className="flex items-center md:justify-center">
+              <div className="relative mx-auto">
                 <ColorSelect
-                  className="pl-3 sm:pl-0"
+                  className="pl-3 sm:pl-0 w-53"
                   onChange={(color) =>
                     (filter.current = { ...filter.current, color: color })
                   }
                   listcolors={["rojo", "azul", "verde", "blanco", "negro"]}
                 />
               </div>
-
 
               <PriceRange
                 className="w-full px-3"
@@ -205,7 +214,9 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
             <div>
               <button
                 className="px-3 py-2 ml-10 bg-emerald-600 text-white rounded-md text-sm font-medium hover:bg-emerald-700 transition duration-150 cursor-pointer mb-5 shadow-lg"
-                onClick={() => { setKeyProducts("listp" + Date.now()); }}
+                onClick={() => {
+                  setKeyProducts("listp" + Date.now());
+                }}
               >
                 <span className="flex items-center justify-center gap-1">
                   <FilterSearchIcon />
@@ -217,7 +228,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                 className="px-3 py-2 ml-3 bg-orange-700 text-white rounded-md text-sm font-medium hover:bg-orange-800 transition duration-150 cursor-pointer mb-5 shadow-lg"
                 onClick={() => {
                   filter.current = initFilter;
-                  setResetFilters("filt" + Date.now())
+                  setResetFilters("filt" + Date.now());
                 }}
               >
                 <span className="flex items-center justify-center gap-1">
@@ -226,7 +237,6 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                 </span>
               </button>
             </div>
-
           </div>
         </div>
       </div>
@@ -247,17 +257,26 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                       onClick={() => {
                         if (index == filter_categories_index) {
                           setFilter_categories_index(-1);
-                          filter.current = { ...filter.current, category: "", subcategory: "" };
+                          filter.current = {
+                            ...filter.current,
+                            category: "",
+                            subcategory: "",
+                          };
                         } else {
                           setFilter_categories_index(index);
                           setFilter_subcategories_index(-1);
-                          filter.current = { ...filter.current, category: item.nombre, subcategory: "" };
+                          filter.current = {
+                            ...filter.current,
+                            category: item.nombre,
+                            subcategory: "",
+                          };
                         }
                       }}
                       className={
                         "w-full text-left px-4 py-2 rounded-md transition-all duration-200 cursor-pointer hover:bg-gray-200" +
-                        `${filter_categories_index === index &&
-                        " bg-gray-100 text-[#06744f]"
+                        `${
+                          filter_categories_index === index &&
+                          " bg-gray-100 text-[#06744f]"
                         }`
                       }
                     >
@@ -273,28 +292,34 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                         <FaAngleRight
                           className={
                             "transition-transform duration-200" +
-                            `${filter_categories_index === index && " rotate-90"}`
+                            `${
+                              filter_categories_index === index && " rotate-90"
+                            }`
                           }
                         />
                       </span>
                     </button>
 
                     <ul
-                      className={
-                        `mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in transition-all duration-300${filter_categories_index == index ? " h-60" : " h-0"}`
-                      }
+                      className={`mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in transition-all duration-300${
+                        filter_categories_index == index ? " h-60" : " h-0"
+                      }`}
                     >
                       {item.subcategories.map((subc, index1) => (
                         <li key={"subc" + index1}>
                           <button
                             onClick={() => {
                               setFilter_subcategories_index(index1);
-                              filter.current = { ...filter.current, subcategory: subc }
+                              filter.current = {
+                                ...filter.current,
+                                subcategory: subc,
+                              };
                             }}
                             className={
                               "w-full text-left px-2 py-1 rounded-md text-gray-600 hover:bg-gray-200 transition duration-150 pl-2 pr-2 pt-1 pb-1 text-sm cursor-pointer" +
-                              `${index1 == filter_subcategories_index &&
-                              " bg-gray-200"
+                              `${
+                                index1 == filter_subcategories_index &&
+                                " bg-gray-200"
                               }`
                             }
                           >
@@ -313,20 +338,32 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
               Nuestros Productos
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 relative min-h-dvh">
-              {filteredProductsData.length > 0 ? filteredProductsData.slice(0, visible_product).map((data) => (
-                <ProductCard key={data.id + "product"} data={data} />
-              )) : <div className="text-center text-gray-500 mt-8 absolute top-0 left-1/5 fade-in">
-                <div className="flex flex-col items-center justify-center bg-gray-50 p-6">
-                  <FaBoxOpen className="text-gray-400 text-9xl mb-6" />
-                  <h2 className="text-3xl font-semibold text-gray-700 mb-2">No se encontraron productos</h2>
-                  <p className="text-gray-500 max-w-md text-center">
-                    Lo sentimos, no hay productos disponibles en este momento. Por favor, intenta nuevamente más tarde.
-                  </p>
+              {filteredProductsData.length > 0 ? (
+                filteredProductsData
+                  .slice(0, visible_product)
+                  .map((data) => (
+                    <ProductCard key={data.id + "product"} data={data} />
+                  ))
+              ) : (
+                <div className="text-center text-gray-500 mt-8 absolute top-0 left-1/5 fade-in">
+                  <div className="flex flex-col items-center justify-center bg-gray-50 p-6">
+                    <FaBoxOpen className="text-gray-400 text-9xl mb-6" />
+                    <h2 className="text-3xl font-semibold text-gray-700 mb-2">
+                      No se encontraron productos
+                    </h2>
+                    <p className="text-gray-500 max-w-md text-center">
+                      Lo sentimos, no hay productos disponibles en este momento.
+                      Por favor, intenta nuevamente más tarde.
+                    </p>
+                  </div>
                 </div>
-              </div>}
+              )}
             </div>
             {visible_product < filteredProductsData.length && (
-              <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer" onClick={showMoreProducts}>
+              <button
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer"
+                onClick={showMoreProducts}
+              >
                 Mostrar más
                 <TbCategoryPlus size={24} className="animate-pulse" />
               </button>
@@ -336,12 +373,18 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
               Ofertas Especiales
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 relative">
-              {
-                products.filter((data) => data.isOffer).slice(0, 3).map(data => <ProductCard key={data.id + "product"} data={data} />)
-              }
+              {products
+                .filter((data) => data.isOffer)
+                .slice(0, 3)
+                .map((data) => (
+                  <ProductCard key={data.id + "product"} data={data} />
+                ))}
             </div>
             {products.filter((data) => data.isOffer).length > 3 && (
-              <Link className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer w-60" href="/offers">
+              <Link
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer w-60"
+                href="/offers"
+              >
                 Mostrar más ofertas
                 <TbCategoryPlus size={24} className="animate-pulse" />
               </Link>

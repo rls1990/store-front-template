@@ -95,7 +95,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
           <h4 className="text-[16px] font-semibold text-gray-700 mb-3 border-b border-b-gray-300 pb-2 m-4 pl-8">
             Opciones de Filtro
           </h4>
-          <div className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7 border-b border-b-gray-300 pb-5">
+          <div className="m-4 grid items-start gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7 border-b border-b-gray-300 pb-5">
             <Select
               title="Fecha de Publicación"
               items={["Más Reciente", "Más Antiguo"]}
@@ -118,7 +118,7 @@ const ProductFilter: FC<ProductFilterProps> = ({ marcas, onChange }) => {
             />
 
             <ColorSelect
-              className="pl-3 sm:pl-0"
+              className="pl-3 sm:pl-0 w-7"
               onChange={(color) =>
                 (filter.current = { ...filter.current, color: color })
               }
