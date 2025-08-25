@@ -15,7 +15,6 @@ export interface ProductData {
   marca: string;
   colors: string[];
   size?: string[];
-
 }
 
 // Creación de arreglos para marcas y colores
@@ -41,15 +40,16 @@ export const marcas: string[] = [
   "Sony",
 ];
 
-
 export const products: ProductData[] = [
   {
     id: 1,
     name: "Smartphone Alpha X100",
     rating: 4.5,
     number_comments: 120,
-    description: "Pantalla AMOLED de 6.5 pulgadas, cámara triple y batería de larga duración.",
-    descripcion_detallada: "El Smartphone Alpha X100 destaca por su impresionante pantalla Super AMOLED de 6.5 pulgadas con resolución Full HD+ y una tasa de refresco de 120Hz. Está equipado con un procesador Octa-Core y 8 GB de RAM, y su sistema de cámara triple incluye un sensor principal de 64 MP, un ultra gran angular de 12 MP y un sensor macro de 5 MP. Su batería de 4500 mAh es compatible con carga rápida de 25W. Además, cuenta con certificación IP67 para resistencia al agua y al polvo, y altavoces estéreo con sonido Dolby Atmos.",
+    description:
+      "Pantalla AMOLED de 6.5 pulgadas, cámara triple y batería de larga duración.",
+    descripcion_detallada:
+      "El Smartphone Alpha X100 destaca por su impresionante pantalla Super AMOLED de 6.5 pulgadas con resolución Full HD+ y una tasa de refresco de 120Hz. Está equipado con un procesador Octa-Core y 8 GB de RAM, y su sistema de cámara triple incluye un sensor principal de 64 MP, un ultra gran angular de 12 MP y un sensor macro de 5 MP. Su batería de 4500 mAh es compatible con carga rápida de 25W. Además, cuenta con certificación IP67 para resistencia al agua y al polvo, y altavoces estéreo con sonido Dolby Atmos.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 499,
@@ -64,8 +64,10 @@ export const products: ProductData[] = [
     name: "Teléfono Beta Pro",
     rating: 4.2,
     number_comments: 75,
-    description: "Diseño elegante, cámara dual y procesador potente para multitarea.",
-    descripcion_detallada: "El Teléfono Beta Pro combina un diseño moderno con un rendimiento excepcional. Su pantalla IPS de 6.2 pulgadas ofrece colores vivos y brillantes. En su interior, un procesador MediaTek Helio G90T y 6 GB de RAM garantizan una experiencia fluida. La cámara dual de 48 MP + 8 MP te permite capturar fotos nítidas y detalladas. Su batería de 4200 mAh soporta carga rápida de 18W, y cuenta con un sensor de huellas dactilares trasero para mayor seguridad.",
+    description:
+      "Diseño elegante, cámara dual y procesador potente para multitarea.",
+    descripcion_detallada:
+      "El Teléfono Beta Pro combina un diseño moderno con un rendimiento excepcional. Su pantalla IPS de 6.2 pulgadas ofrece colores vivos y brillantes. En su interior, un procesador MediaTek Helio G90T y 6 GB de RAM garantizan una experiencia fluida. La cámara dual de 48 MP + 8 MP te permite capturar fotos nítidas y detalladas. Su batería de 4200 mAh soporta carga rápida de 18W, y cuenta con un sensor de huellas dactilares trasero para mayor seguridad.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 399,
@@ -80,7 +82,8 @@ export const products: ProductData[] = [
     rating: 4.7,
     number_comments: 200,
     description: "Compatible con 5G, pantalla ultra nítida y carga rápida.",
-    descripcion_detallada: "El Celular Gamma 5G es perfecto para la conectividad de próxima generación. Con una pantalla OLED de 6.7 pulgadas, disfrutarás de colores intensos y contrastes profundos. Su procesador Kirin 990 5G y 8 GB de RAM brindan un rendimiento de alta velocidad. La cámara principal de 50 MP con tecnología Ultra Vision capta fotos impresionantes en cualquier condición de luz. Además, su batería de 4300 mAh con carga rápida de 66W permite recargar el dispositivo en minutos.",
+    descripcion_detallada:
+      "El Celular Gamma 5G es perfecto para la conectividad de próxima generación. Con una pantalla OLED de 6.7 pulgadas, disfrutarás de colores intensos y contrastes profundos. Su procesador Kirin 990 5G y 8 GB de RAM brindan un rendimiento de alta velocidad. La cámara principal de 50 MP con tecnología Ultra Vision capta fotos impresionantes en cualquier condición de luz. Además, su batería de 4300 mAh con carga rápida de 66W permite recargar el dispositivo en minutos.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 599,
@@ -97,7 +100,8 @@ export const products: ProductData[] = [
     rating: 4.0,
     number_comments: 60,
     description: "Compacto, fácil de usar y con buena autonomía.",
-    descripcion_detallada: "El Smartphone Delta Mini es la opción ideal para quienes prefieren un dispositivo compacto. Con una pantalla HD+ de 5.8 pulgadas, es fácil de manejar con una sola mano. Funciona con un procesador Snapdragon 480 5G y 4 GB de RAM, ideal para las tareas diarias. Su batería de 4000 mAh asegura una autonomía suficiente para todo el día. La cámara principal de 13 MP te permite capturar momentos con claridad.",
+    descripcion_detallada:
+      "El Smartphone Delta Mini es la opción ideal para quienes prefieren un dispositivo compacto. Con una pantalla HD+ de 5.8 pulgadas, es fácil de manejar con una sola mano. Funciona con un procesador Snapdragon 480 5G y 4 GB de RAM, ideal para las tareas diarias. Su batería de 4000 mAh asegura una autonomía suficiente para todo el día. La cámara principal de 13 MP te permite capturar momentos con claridad.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 299,
@@ -112,7 +116,8 @@ export const products: ProductData[] = [
     rating: 4.6,
     number_comments: 85,
     description: "Gran pantalla, batería duradera y cámara mejorada.",
-    descripcion_detallada: "El Phone Zeta Plus ofrece una experiencia visual envolvente con su pantalla Max Vision de 6.8 pulgadas. El procesador Snapdragon 765 y 6 GB de RAM proporcionan un rendimiento fluido para juegos y aplicaciones. Su sistema de cámara de 64 MP con tecnología Quad Pixel garantiza fotos de alta resolución incluso con poca luz. La batería de 5000 mAh te permite usar el teléfono durante más de un día sin preocuparte por la carga.",
+    descripcion_detallada:
+      "El Phone Zeta Plus ofrece una experiencia visual envolvente con su pantalla Max Vision de 6.8 pulgadas. El procesador Snapdragon 765 y 6 GB de RAM proporcionan un rendimiento fluido para juegos y aplicaciones. Su sistema de cámara de 64 MP con tecnología Quad Pixel garantiza fotos de alta resolución incluso con poca luz. La batería de 5000 mAh te permite usar el teléfono durante más de un día sin preocuparte por la carga.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 450,
@@ -127,7 +132,8 @@ export const products: ProductData[] = [
     rating: 4.3,
     number_comments: 110,
     description: "Rendimiento sólido y cámara frontal para selfies.",
-    descripcion_detallada: "El Smartphone Epsilon S es un dispositivo confiable con una pantalla AMOLED de 6.4 pulgadas. Equipado con un procesador Mediatek Dimensity 900 y 8 GB de RAM, ofrece un rendimiento estable. Su cámara frontal de 32 MP con IA es perfecta para selfies de alta calidad, mientras que la cámara trasera de 50 MP captura fotos vibrantes. La batería de 4300 mAh con carga rápida de 33W te asegura que siempre estarás conectado.",
+    descripcion_detallada:
+      "El Smartphone Epsilon S es un dispositivo confiable con una pantalla AMOLED de 6.4 pulgadas. Equipado con un procesador Mediatek Dimensity 900 y 8 GB de RAM, ofrece un rendimiento estable. Su cámara frontal de 32 MP con IA es perfecta para selfies de alta calidad, mientras que la cámara trasera de 50 MP captura fotos vibrantes. La batería de 4300 mAh con carga rápida de 33W te asegura que siempre estarás conectado.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 420,
@@ -142,7 +148,8 @@ export const products: ProductData[] = [
     rating: 4.1,
     number_comments: 95,
     description: "Durabilidad alta, batería resistente y pantalla HD.",
-    descripcion_detallada: "El Teléfono Theta Max está diseñado para durar. Su chasis reforzado lo hace resistente a caídas y golpes. La pantalla HD+ de 6.5 pulgadas es ideal para el uso diario. Con un procesador Snapdragon 662 y 4 GB de RAM, maneja las aplicaciones básicas con facilidad. Su gran batería de 6000 mAh ofrece una autonomía excepcional, perfecta para un uso prolongado sin necesidad de recarga. La cámara principal de 16 MP te permite tomar fotos de buena calidad.",
+    descripcion_detallada:
+      "El Teléfono Theta Max está diseñado para durar. Su chasis reforzado lo hace resistente a caídas y golpes. La pantalla HD+ de 6.5 pulgadas es ideal para el uso diario. Con un procesador Snapdragon 662 y 4 GB de RAM, maneja las aplicaciones básicas con facilidad. Su gran batería de 6000 mAh ofrece una autonomía excepcional, perfecta para un uso prolongado sin necesidad de recarga. La cámara principal de 16 MP te permite tomar fotos de buena calidad.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 350,
@@ -158,8 +165,10 @@ export const products: ProductData[] = [
     name: "Smartphone Iota Pro",
     rating: 4.4,
     number_comments: 130,
-    description: "Procesador rápido, cámara triple y sistema operativo actualizado.",
-    descripcion_detallada: "El Smartphone Iota Pro ofrece un rendimiento de primera clase con su procesador A15 Bionic y 6 GB de RAM. Su pantalla Liquid Retina HD de 6.1 pulgadas es un deleite visual. El sistema de cámara triple de 12 MP con modo nocturno y Deep Fusion te permite capturar fotos y videos con calidad profesional. Además, cuenta con el último sistema operativo, seguridad avanzada con Face ID y carga inalámbrica MagSafe.",
+    description:
+      "Procesador rápido, cámara triple y sistema operativo actualizado.",
+    descripcion_detallada:
+      "El Smartphone Iota Pro ofrece un rendimiento de primera clase con su procesador A15 Bionic y 6 GB de RAM. Su pantalla Liquid Retina HD de 6.1 pulgadas es un deleite visual. El sistema de cámara triple de 12 MP con modo nocturno y Deep Fusion te permite capturar fotos y videos con calidad profesional. Además, cuenta con el último sistema operativo, seguridad avanzada con Face ID y carga inalámbrica MagSafe.",
     category: "Electrónica",
     subcategory: "Smartphones",
     price: 480,
@@ -174,7 +183,8 @@ export const products: ProductData[] = [
     rating: 4.6,
     number_comments: 140,
     description: "Laptop ligera con procesador Intel i7 y 16GB RAM.",
-    descripcion_detallada: "La Laptop UltraBook 15 es un equipo ultraligero y elegante, perfecto para la movilidad. Impulsada por un procesador Intel Core i7 de 11ª generación y 16 GB de RAM, ofrece un rendimiento rápido para la productividad y el multitasking. Su pantalla de 15.6 pulgadas con resolución Full HD y bordes delgados maximiza el área de visualización. Con un almacenamiento SSD de 512 GB, el inicio y la carga de aplicaciones son instantáneos. Su batería de larga duración te permite trabajar durante todo el día sin interrupciones.",
+    descripcion_detallada:
+      "La Laptop UltraBook 15 es un equipo ultraligero y elegante, perfecto para la movilidad. Impulsada por un procesador Intel Core i7 de 11ª generación y 16 GB de RAM, ofrece un rendimiento rápido para la productividad y el multitasking. Su pantalla de 15.6 pulgadas con resolución Full HD y bordes delgados maximiza el área de visualización. Con un almacenamiento SSD de 512 GB, el inicio y la carga de aplicaciones son instantáneos. Su batería de larga duración te permite trabajar durante todo el día sin interrupciones.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 1200,
@@ -189,8 +199,10 @@ export const products: ProductData[] = [
     name: "Notebook Gamer GX",
     rating: 4.8,
     number_comments: 210,
-    description: "Laptop para juegos con tarjeta gráfica avanzada y pantalla 144Hz.",
-    descripcion_detallada: "La Notebook Gamer GX está diseñada para los entusiastas de los videojuegos. Equipada con una tarjeta gráfica NVIDIA GeForce RTX 3070 y un procesador Intel Core i9, ofrece un rendimiento gráfico asombroso. Su pantalla de 15.6 pulgadas con tasa de refresco de 144Hz y tiempo de respuesta de 3ms garantiza una experiencia de juego ultra fluida y sin 'ghosting'. El sistema de refrigeración avanzado evita el sobrecalentamiento durante largas sesiones de juego. Incluye un teclado retroiluminado RGB personalizable y un sonido envolvente para sumergirte por completo en la acción.",
+    description:
+      "Laptop para juegos con tarjeta gráfica avanzada y pantalla 144Hz.",
+    descripcion_detallada:
+      "La Notebook Gamer GX está diseñada para los entusiastas de los videojuegos. Equipada con una tarjeta gráfica NVIDIA GeForce RTX 3070 y un procesador Intel Core i9, ofrece un rendimiento gráfico asombroso. Su pantalla de 15.6 pulgadas con tasa de refresco de 144Hz y tiempo de respuesta de 3ms garantiza una experiencia de juego ultra fluida y sin 'ghosting'. El sistema de refrigeración avanzado evita el sobrecalentamiento durante largas sesiones de juego. Incluye un teclado retroiluminado RGB personalizable y un sonido envolvente para sumergirte por completo en la acción.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 1800,
@@ -204,8 +216,10 @@ export const products: ProductData[] = [
     name: "Laptop Business Pro",
     rating: 4.4,
     number_comments: 90,
-    description: "Ideal para trabajo con seguridad y batería de larga duración.",
-    descripcion_detallada: "La Laptop Business Pro es la compañera perfecta para el entorno profesional. Con un procesador Intel Core i5 y 8 GB de RAM, te permite trabajar de manera eficiente. Cuenta con características de seguridad avanzadas como un lector de huellas dactilares y un chip TPM. Su batería de larga duración te permite realizar reuniones y trabajar sobre la marcha sin preocupaciones. Su chasis robusto y su diseño elegante la convierten en una opción duradera y profesional.",
+    description:
+      "Ideal para trabajo con seguridad y batería de larga duración.",
+    descripcion_detallada:
+      "La Laptop Business Pro es la compañera perfecta para el entorno profesional. Con un procesador Intel Core i5 y 8 GB de RAM, te permite trabajar de manera eficiente. Cuenta con características de seguridad avanzadas como un lector de huellas dactilares y un chip TPM. Su batería de larga duración te permite realizar reuniones y trabajar sobre la marcha sin preocupaciones. Su chasis robusto y su diseño elegante la convierten en una opción duradera y profesional.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 1100,
@@ -220,7 +234,8 @@ export const products: ProductData[] = [
     rating: 4.2,
     number_comments: 70,
     description: "Compacta y económica para estudiantes, buena conectividad.",
-    descripcion_detallada: "La Laptop Student Light es un equipo accesible diseñado para las necesidades de los estudiantes. Su diseño compacto y ligero la hace fácil de transportar en la mochila. Con un procesador Intel Celeron y 4 GB de RAM, es ideal para navegar por internet, tomar notas y realizar trabajos escolares. Cuenta con todos los puertos necesarios, incluyendo USB-C y HDMI, para conectarla a periféricos y monitores externos. Su batería de larga duración te permite estudiar en la biblioteca o en el campus sin necesidad de un cargador.",
+    descripcion_detallada:
+      "La Laptop Student Light es un equipo accesible diseñado para las necesidades de los estudiantes. Su diseño compacto y ligero la hace fácil de transportar en la mochila. Con un procesador Intel Celeron y 4 GB de RAM, es ideal para navegar por internet, tomar notas y realizar trabajos escolares. Cuenta con todos los puertos necesarios, incluyendo USB-C y HDMI, para conectarla a periféricos y monitores externos. Su batería de larga duración te permite estudiar en la biblioteca o en el campus sin necesidad de un cargador.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 650,
@@ -235,7 +250,8 @@ export const products: ProductData[] = [
     rating: 4.7,
     number_comments: 120,
     description: "Pantalla 4K y hardware potente para creación de contenido.",
-    descripcion_detallada: "La Laptop Creator 16 es la herramienta definitiva para creadores de contenido. Su pantalla OLED de 16 pulgadas con resolución 4K y cobertura del 100% del espacio de color DCI-P3 ofrece una precisión de color excepcional. Con un procesador Intel Core i9 y una tarjeta gráfica NVIDIA GeForce RTX 3080, esta laptop maneja sin problemas la edición de video, el renderizado 3D y el diseño gráfico. Su sistema de refrigeración eficiente y su teclado de alta precisión te permiten trabajar en tus proyectos más exigentes con comodidad.",
+    descripcion_detallada:
+      "La Laptop Creator 16 es la herramienta definitiva para creadores de contenido. Su pantalla OLED de 16 pulgadas con resolución 4K y cobertura del 100% del espacio de color DCI-P3 ofrece una precisión de color excepcional. Con un procesador Intel Core i9 y una tarjeta gráfica NVIDIA GeForce RTX 3080, esta laptop maneja sin problemas la edición de video, el renderizado 3D y el diseño gráfico. Su sistema de refrigeración eficiente y su teclado de alta precisión te permiten trabajar en tus proyectos más exigentes con comodidad.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 2100,
@@ -243,14 +259,18 @@ export const products: ProductData[] = [
     marca: "apple",
     colors: ["gris", "negro"],
     size: ["16 pulgadas"],
+    isOffer: true,
+    priceOffer: 2000,
   },
   {
     id: 14,
     name: "Laptop ZenBook S",
     rating: 4.5,
     number_comments: 100,
-    description: "Ultraligera y con gran autonomía para profesionales en movimiento.",
-    descripcion_detallada: "La Laptop ZenBook S redefine la portabilidad con su diseño ultraligero y delgado. Equipada con un procesador Intel Core i7 de bajo consumo y 16 GB de RAM, ofrece un rendimiento potente y eficiente. Su pantalla NanoEdge Full HD de 13.3 pulgadas con biseles ultrafinos te brinda una experiencia visual inmersiva. Con una batería que dura hasta 15 horas, es perfecta para profesionales que viajan constantemente. Además, su carcasa de aluminio de alta calidad le da un aspecto premium y duradero.",
+    description:
+      "Ultraligera y con gran autonomía para profesionales en movimiento.",
+    descripcion_detallada:
+      "La Laptop ZenBook S redefine la portabilidad con su diseño ultraligero y delgado. Equipada con un procesador Intel Core i7 de bajo consumo y 16 GB de RAM, ofrece un rendimiento potente y eficiente. Su pantalla NanoEdge Full HD de 13.3 pulgadas con biseles ultrafinos te brinda una experiencia visual inmersiva. Con una batería que dura hasta 15 horas, es perfecta para profesionales que viajan constantemente. Además, su carcasa de aluminio de alta calidad le da un aspecto premium y duradero.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 1300,
@@ -267,7 +287,8 @@ export const products: ProductData[] = [
     rating: 4.9,
     number_comments: 250,
     description: "Rendimiento máximo con procesador y gráfica gamer.",
-    descripcion_detallada: "La Gaming Laptop Titan es una potencia de rendimiento. Equipada con un procesador AMD Ryzen 9 y una tarjeta gráfica NVIDIA GeForce RTX 3080 Ti, esta máquina puede ejecutar cualquier juego en la configuración más alta. Su pantalla QHD de 17.3 pulgadas con una tasa de refresco de 240Hz te sumerge en el juego. El sistema de refrigeración de doble ventilador y múltiples tubos de calor mantiene las temperaturas bajo control. El teclado mecánico y el sonido envolvente Nahimic mejoran aún más la experiencia de juego.",
+    descripcion_detallada:
+      "La Gaming Laptop Titan es una potencia de rendimiento. Equipada con un procesador AMD Ryzen 9 y una tarjeta gráfica NVIDIA GeForce RTX 3080 Ti, esta máquina puede ejecutar cualquier juego en la configuración más alta. Su pantalla QHD de 17.3 pulgadas con una tasa de refresco de 240Hz te sumerge en el juego. El sistema de refrigeración de doble ventilador y múltiples tubos de calor mantiene las temperaturas bajo control. El teclado mecánico y el sonido envolvente Nahimic mejoran aún más la experiencia de juego.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 2500,
@@ -282,7 +303,8 @@ export const products: ProductData[] = [
     rating: 4.0,
     number_comments: 50,
     description: "Modelo básico para uso general y navegación.",
-    descripcion_detallada: "La Laptop Basic Model es una opción económica y funcional para el uso diario. Con un procesador Intel Pentium y 4 GB de RAM, es ideal para la navegación web, el correo electrónico y documentos de oficina. Su pantalla de 15.6 pulgadas es lo suficientemente grande para trabajar y ver videos con comodidad. El almacenamiento SSD de 128 GB asegura que el sistema operativo y las aplicaciones se carguen rápidamente. Es perfecta para estudiantes o usuarios que necesitan un equipo simple y confiable.",
+    descripcion_detallada:
+      "La Laptop Basic Model es una opción económica y funcional para el uso diario. Con un procesador Intel Pentium y 4 GB de RAM, es ideal para la navegación web, el correo electrónico y documentos de oficina. Su pantalla de 15.6 pulgadas es lo suficientemente grande para trabajar y ver videos con comodidad. El almacenamiento SSD de 128 GB asegura que el sistema operativo y las aplicaciones se carguen rápidamente. Es perfecta para estudiantes o usuarios que necesitan un equipo simple y confiable.",
     category: "Electrónica",
     subcategory: "Laptops",
     price: 500,
@@ -296,8 +318,10 @@ export const products: ProductData[] = [
     name: "Tablet Aura 10",
     rating: 4.3,
     number_comments: 90,
-    description: "Tablet con pantalla de 10 pulgadas, perfecta para multimedia.",
-    descripcion_detallada: "La Tablet Aura 10 es un dispositivo multimedia versátil. Con una pantalla IPS de 10.1 pulgadas, ofrece una calidad de imagen nítida para ver películas y series. Equipada con un procesador de ocho núcleos y 4 GB de RAM, maneja las aplicaciones y los juegos con fluidez. Sus altavoces estéreo sintonizados por AKG proporcionan un sonido envolvente. La batería de 7040 mAh asegura horas de entretenimiento.",
+    description:
+      "Tablet con pantalla de 10 pulgadas, perfecta para multimedia.",
+    descripcion_detallada:
+      "La Tablet Aura 10 es un dispositivo multimedia versátil. Con una pantalla IPS de 10.1 pulgadas, ofrece una calidad de imagen nítida para ver películas y series. Equipada con un procesador de ocho núcleos y 4 GB de RAM, maneja las aplicaciones y los juegos con fluidez. Sus altavoces estéreo sintonizados por AKG proporcionan un sonido envolvente. La batería de 7040 mAh asegura horas de entretenimiento.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 350,
@@ -311,8 +335,10 @@ export const products: ProductData[] = [
     name: "Tablet Pro Max",
     rating: 4.7,
     number_comments: 150,
-    description: "Tablet para profesionales con teclado magnético y lápiz táctil.",
-    descripcion_detallada: "La Tablet Pro Max es la herramienta definitiva para profesionales y creativos. Su pantalla Liquid Retina XDR de 12.9 pulgadas con tecnología ProMotion te ofrece colores precisos y una respuesta táctil excepcional. Impulsada por un chip M1, tiene un rendimiento comparable al de una computadora. Incluye un teclado magnético y es compatible con el Apple Pencil, lo que la hace ideal para dibujar, editar y trabajar en cualquier lugar. El sistema de cámara TrueDepth te permite usar Face ID para un desbloqueo seguro.",
+    description:
+      "Tablet para profesionales con teclado magnético y lápiz táctil.",
+    descripcion_detallada:
+      "La Tablet Pro Max es la herramienta definitiva para profesionales y creativos. Su pantalla Liquid Retina XDR de 12.9 pulgadas con tecnología ProMotion te ofrece colores precisos y una respuesta táctil excepcional. Impulsada por un chip M1, tiene un rendimiento comparable al de una computadora. Incluye un teclado magnético y es compatible con el Apple Pencil, lo que la hace ideal para dibujar, editar y trabajar en cualquier lugar. El sistema de cámara TrueDepth te permite usar Face ID para un desbloqueo seguro.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 650,
@@ -328,7 +354,8 @@ export const products: ProductData[] = [
     rating: 4.1,
     number_comments: 60,
     description: "Compacta, ligera y con buena autonomía.",
-    descripcion_detallada: "La Tablet Mini Light es perfecta para llevar a todas partes. Su tamaño compacto de 8 pulgadas la hace ideal para leer, ver videos y navegar por internet en cualquier momento. Con un procesador Quad-Core y 2 GB de RAM, ofrece un rendimiento básico y eficiente. Su batería de 5100 mAh te proporciona una autonomía de hasta 12 horas. El diseño robusto y su peso ligero la convierten en la compañera de viaje perfecta.",
+    descripcion_detallada:
+      "La Tablet Mini Light es perfecta para llevar a todas partes. Su tamaño compacto de 8 pulgadas la hace ideal para leer, ver videos y navegar por internet en cualquier momento. Con un procesador Quad-Core y 2 GB de RAM, ofrece un rendimiento básico y eficiente. Su batería de 5100 mAh te proporciona una autonomía de hasta 12 horas. El diseño robusto y su peso ligero la convierten en la compañera de viaje perfecta.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 280,
@@ -342,8 +369,10 @@ export const products: ProductData[] = [
     name: "Tablet Plus 12",
     rating: 4.5,
     number_comments: 120,
-    description: "Pantalla grande y tecnología avanzada para edición multimedia.",
-    descripcion_detallada: "La Tablet Plus 12 es un dispositivo de alto rendimiento para la creación de contenido y el consumo multimedia. Su pantalla Super AMOLED de 12.4 pulgadas con una resolución de 2800x1752 píxeles ofrece una calidad de imagen excepcional. Equipada con un procesador Snapdragon 8 Gen 1 y 8 GB de RAM, maneja sin esfuerzo las tareas más exigentes. El S Pen incluido te permite tomar notas y dibujar con una precisión increíble.",
+    description:
+      "Pantalla grande y tecnología avanzada para edición multimedia.",
+    descripcion_detallada:
+      "La Tablet Plus 12 es un dispositivo de alto rendimiento para la creación de contenido y el consumo multimedia. Su pantalla Super AMOLED de 12.4 pulgadas con una resolución de 2800x1752 píxeles ofrece una calidad de imagen excepcional. Equipada con un procesador Snapdragon 8 Gen 1 y 8 GB de RAM, maneja sin esfuerzo las tareas más exigentes. El S Pen incluido te permite tomar notas y dibujar con una precisión increíble.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 700,
@@ -358,7 +387,8 @@ export const products: ProductData[] = [
     rating: 4.0,
     number_comments: 45,
     description: "Ideal para uso cotidiano y navegación básica.",
-    descripcion_detallada: "La Tablet Basic Model es una opción económica para el uso diario. Con una pantalla HD de 10.3 pulgadas y un procesador MediaTek Helio P22T, es ideal para navegar por internet, ver videos y leer. Su batería de 5000 mAh te ofrece una autonomía decente para el día a día. Es una tableta perfecta para el hogar, para que los niños vean dibujos animados o para leer tus libros favoritos.",
+    descripcion_detallada:
+      "La Tablet Basic Model es una opción económica para el uso diario. Con una pantalla HD de 10.3 pulgadas y un procesador MediaTek Helio P22T, es ideal para navegar por internet, ver videos y leer. Su batería de 5000 mAh te ofrece una autonomía decente para el día a día. Es una tableta perfecta para el hogar, para que los niños vean dibujos animados o para leer tus libros favoritos.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 250,
@@ -373,7 +403,8 @@ export const products: ProductData[] = [
     rating: 4.6,
     number_comments: 130,
     description: "Optimizada para juegos con pantalla de alta frecuencia.",
-    descripcion_detallada: "La Tablet Gamer X está diseñada para ofrecer una experiencia de juego superior. Su pantalla LCD de 11 pulgadas con una tasa de refresco de 144Hz y una resolución de 2560x1600 píxeles garantiza una jugabilidad fluida y sin interrupciones. El procesador Snapdragon 870 y 8 GB de RAM proporcionan la potencia necesaria para ejecutar juegos exigentes. Su sistema de refrigeración avanzado y los altavoces estéreo con sonido Harman Kardon te sumergen por completo en la acción.",
+    descripcion_detallada:
+      "La Tablet Gamer X está diseñada para ofrecer una experiencia de juego superior. Su pantalla LCD de 11 pulgadas con una tasa de refresco de 144Hz y una resolución de 2560x1600 píxeles garantiza una jugabilidad fluida y sin interrupciones. El procesador Snapdragon 870 y 8 GB de RAM proporcionan la potencia necesaria para ejecutar juegos exigentes. Su sistema de refrigeración avanzado y los altavoces estéreo con sonido Harman Kardon te sumergen por completo en la acción.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 600,
@@ -388,7 +419,8 @@ export const products: ProductData[] = [
     rating: 4.8,
     number_comments: 100,
     description: "Incluye lápiz táctil sensible para dibujo y diseño.",
-    descripcion_detallada: "La Tablet Artist Pro es la herramienta perfecta para artistas digitales y diseñadores gráficos. Su pantalla Liquid Retina XDR de 12.9 pulgadas ofrece una precisión de color y un brillo excepcionales. El lápiz táctil incluido tiene una latencia ultrabaja y 4096 niveles de presión, lo que te permite dibujar y pintar con gran realismo. Con el potente chip M2, el rendimiento es superior para la edición de fotos y videos, el diseño 3D y el dibujo. Además, cuenta con una cámara de gran angular y un escáner LiDAR.",
+    descripcion_detallada:
+      "La Tablet Artist Pro es la herramienta perfecta para artistas digitales y diseñadores gráficos. Su pantalla Liquid Retina XDR de 12.9 pulgadas ofrece una precisión de color y un brillo excepcionales. El lápiz táctil incluido tiene una latencia ultrabaja y 4096 niveles de presión, lo que te permite dibujar y pintar con gran realismo. Con el potente chip M2, el rendimiento es superior para la edición de fotos y videos, el diseño 3D y el dibujo. Además, cuenta con una cámara de gran angular y un escáner LiDAR.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 720,
@@ -405,7 +437,8 @@ export const products: ProductData[] = [
     rating: 4.2,
     number_comments: 75,
     description: "Tablet resistente para uso familiar y educativo.",
-    descripcion_detallada: "La Tablet Family es un dispositivo duradero diseñado para el uso familiar. Su chasis robusto y su cubierta protectora la hacen resistente a caídas y golpes. Su pantalla de 10.4 pulgadas es lo suficientemente grande para ver películas y hacer videollamadas. El procesador Octa-Core y 3 GB de RAM garantizan un rendimiento fluido. Además, cuenta con controles parentales que permiten a los padres supervisar y limitar el contenido para los niños.",
+    descripcion_detallada:
+      "La Tablet Family es un dispositivo duradero diseñado para el uso familiar. Su chasis robusto y su cubierta protectora la hacen resistente a caídas y golpes. Su pantalla de 10.4 pulgadas es lo suficientemente grande para ver películas y hacer videollamadas. El procesador Octa-Core y 3 GB de RAM garantizan un rendimiento fluido. Además, cuenta con controles parentales que permiten a los padres supervisar y limitar el contenido para los niños.",
     category: "Electrónica",
     subcategory: "Tablets",
     price: 300,
@@ -420,7 +453,8 @@ export const products: ProductData[] = [
     rating: 4.5,
     number_comments: 150,
     description: "Auriculares inalámbricos con cancelación de ruido.",
-    descripcion_detallada: "Los Auriculares Bluetooth Pro ofrecen una experiencia de sonido inmersiva con tecnología de cancelación de ruido activa. Su diseño ergonómico y almohadillas de espuma con memoria garantizan un ajuste cómodo durante horas. El sonido de alta fidelidad y los bajos profundos te permiten disfrutar de tu música favorita con gran detalle. Con una autonomía de hasta 24 horas y un estuche de carga, puedes llevar tu música a todas partes. Cuentan con controles táctiles intuitivos para gestionar la música y las llamadas.",
+    descripcion_detallada:
+      "Los Auriculares Bluetooth Pro ofrecen una experiencia de sonido inmersiva con tecnología de cancelación de ruido activa. Su diseño ergonómico y almohadillas de espuma con memoria garantizan un ajuste cómodo durante horas. El sonido de alta fidelidad y los bajos profundos te permiten disfrutar de tu música favorita con gran detalle. Con una autonomía de hasta 24 horas y un estuche de carga, puedes llevar tu música a todas partes. Cuentan con controles táctiles intuitivos para gestionar la música y las llamadas.",
     category: "Electrónica",
     subcategory: "Audio",
     price: 150,
@@ -435,7 +469,8 @@ export const products: ProductData[] = [
     rating: 4.6,
     number_comments: 130,
     description: "Sonido potente en un parlante compacto y resistente.",
-    descripcion_detallada: "El Parlante Portátil MaxSound ofrece un sonido potente y claro en un diseño compacto. Con la tecnología BassUp, los bajos son profundos y vibrantes. Su construcción resistente y certificación IPX7 lo hacen a prueba de agua, ideal para la playa, la piscina o la montaña. La batería de iones de litio de alta capacidad te ofrece hasta 15 horas de música. Puedes emparejar dos parlantes para un sonido estéreo inmersivo. La conectividad Bluetooth 5.0 garantiza una conexión estable y rápida.",
+    descripcion_detallada:
+      "El Parlante Portátil MaxSound ofrece un sonido potente y claro en un diseño compacto. Con la tecnología BassUp, los bajos son profundos y vibrantes. Su construcción resistente y certificación IPX7 lo hacen a prueba de agua, ideal para la playa, la piscina o la montaña. La batería de iones de litio de alta capacidad te ofrece hasta 15 horas de música. Puedes emparejar dos parlantes para un sonido estéreo inmersivo. La conectividad Bluetooth 5.0 garantiza una conexión estable y rápida.",
     category: "Electrónica",
     subcategory: "Audio",
     price: 120,
@@ -450,7 +485,8 @@ export const products: ProductData[] = [
     rating: 4.7,
     number_comments: 110,
     description: "Experiencia inmersiva con sonido envolvente 5.1.",
-    descripcion_detallada: "La Barra de Sonido Home Cinema transforma tu sala de estar en un cine. Con un sistema de sonido envolvente 5.1, te sumergirás en la acción de tus películas y series favoritas. Incluye un subwoofer inalámbrico para bajos profundos y potentes, y altavoces satélite para un sonido multidimensional. Es compatible con formatos de audio como Dolby Digital y DTS. La conectividad HDMI ARC te permite controlarla con el mando a distancia de tu televisor.",
+    descripcion_detallada:
+      "La Barra de Sonido Home Cinema transforma tu sala de estar en un cine. Con un sistema de sonido envolvente 5.1, te sumergirás en la acción de tus películas y series favoritas. Incluye un subwoofer inalámbrico para bajos profundos y potentes, y altavoces satélite para un sonido multidimensional. Es compatible con formatos de audio como Dolby Digital y DTS. La conectividad HDMI ARC te permite controlarla con el mando a distancia de tu televisor.",
     category: "Electrónica",
     subcategory: "Audio",
     price: 300,
@@ -465,7 +501,8 @@ export const products: ProductData[] = [
     rating: 4.3,
     number_comments: 70,
     description: "Auriculares resistentes al sudor, ideales para entrenar.",
-    descripcion_detallada: "Los Auriculares Deportivos FitSound son la elección perfecta para tus sesiones de entrenamiento. Con una certificación IPX4, son resistentes al sudor y las salpicaduras de agua. Su diseño de gancho en la oreja garantiza un ajuste seguro y cómodo, incluso durante los ejercicios más intensos. Los drivers dinámicos de 10 mm ofrecen un sonido potente con bajos mejorados. La batería de larga duración te permite entrenar durante horas sin interrupciones. El micrófono integrado con cancelación de ruido te permite hacer llamadas claras mientras te ejercitas.",
+    descripcion_detallada:
+      "Los Auriculares Deportivos FitSound son la elección perfecta para tus sesiones de entrenamiento. Con una certificación IPX4, son resistentes al sudor y las salpicaduras de agua. Su diseño de gancho en la oreja garantiza un ajuste seguro y cómodo, incluso durante los ejercicios más intensos. Los drivers dinámicos de 10 mm ofrecen un sonido potente con bajos mejorados. La batería de larga duración te permite entrenar durante horas sin interrupciones. El micrófono integrado con cancelación de ruido te permite hacer llamadas claras mientras te ejercitas.",
     category: "Electrónica",
     subcategory: "Audio",
     price: 80,
@@ -481,7 +518,8 @@ export const products: ProductData[] = [
     rating: 4.0,
     number_comments: 55,
     description: "Pequeño, ligero y con buena calidad de sonido.",
-    descripcion_detallada: "El Parlante Bluetooth Mini es ideal para escuchar música en cualquier lugar. Su tamaño compacto y su peso ligero lo hacen fácil de llevar en el bolsillo o en la mochila. A pesar de su tamaño, ofrece un sonido sorprendentemente claro y potente. La batería recargable te da hasta 5 horas de música. Puedes conectarlo a tu teléfono o tableta a través de Bluetooth o usar la entrada de audio auxiliar.",
+    descripcion_detallada:
+      "El Parlante Bluetooth Mini es ideal para escuchar música en cualquier lugar. Su tamaño compacto y su peso ligero lo hacen fácil de llevar en el bolsillo o en la mochila. A pesar de su tamaño, ofrece un sonido sorprendentemente claro y potente. La batería recargable te da hasta 5 horas de música. Puedes conectarlo a tu teléfono o tableta a través de Bluetooth o usar la entrada de audio auxiliar.",
     category: "Electrónica",
     subcategory: "Audio",
     price: 50,
