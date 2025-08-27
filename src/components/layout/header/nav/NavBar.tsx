@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import { NavCar } from "./NavCar";
 import NavItems from "./NavItems";
 
 const NavBar = () => {
@@ -8,7 +9,12 @@ const NavBar = () => {
         <div className="p-2">
           <Logo />
         </div>
-        <NavItems />
+        <div>
+          <NavItems />
+          <div className="absolute top-8 right-0">
+            <NavCar />
+          </div>
+        </div>
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@ export interface ProductData {
   id: number;
   name: string;
   rating: number;
-  number_comments: number;
+  number_comments?: number;
   description: string;
   descripcion_detallada?: string;
   category: string;

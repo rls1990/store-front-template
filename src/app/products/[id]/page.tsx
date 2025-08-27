@@ -5,16 +5,22 @@ import ColorSelect from "@/components/ui/fields/color/ColorSelect";
 import Rating from "@/components/ui/fields/rating/Rating";
 import { SizeSelect } from "@/components/ui/fields/size/SizeSelect";
 import { products } from "@/data/products";
+import { useCarStore } from "@/store/useCarStore";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 import { FaHeart, FaRegTrashAlt, FaShoppingCart } from "react-icons/fa";
+import { ProductStorage } from "../../../store/useCarStore";
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
   const product = products[Number.parseInt(id) - 1];
   const [cantidad, setCantidad] = useState(1);
+  const [color, setColor] = useState<string | undefined>(undefined);
+  const [sizeSelect, setSizeSelect] = useState<string | undefined>(undefined);
+
+  const { addProduct } = useCarStore();
 
   return (
     <>
@@ -62,7 +68,12 @@ export default function ProductPage() {
             <p className="text-gray-700 mb-6">{product.description}</p>
 
             <div className="mb-6">
-              <ColorSelect listcolors={product.colors} />
+              <ColorSelect
+                listcolors={product.colors}
+                onChange={(color) => {
+                  setColor(color);
+                }}
+              />
             </div>
 
             <div className="mb-6">
@@ -71,7 +82,9 @@ export default function ProductPage() {
               </label>
               <SizeSelect
                 size={product.size}
-                onChange={(value) => console.log(value)}
+                onChange={(value) => {
+                  setSizeSelect(value);
+                }}
               />
             </div>
 
@@ -119,7 +132,26 @@ export default function ProductPage() {
               </div>
             </div>
 
-            <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-150 flex items-center justify-center cursor-pointer">
+            <button
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-150 flex items-center justify-center cursor-pointer"
+              onClick={() => {
+                const newProduct: ProductStorage = {
+                  id: Date.now(),
+                  color: color,
+                  count: cantidad,
+                  size: sizeSelect,
+                  image: product.image,
+                  marca: product.marca,
+                  name: product.name,
+                  price:
+                    product.isOffer && product.priceOffer
+                      ? product.priceOffer
+                      : product.price,
+                };
+                addProduct(newProduct);
+                console.log(newProduct);
+              }}
+            >
               <FaShoppingCart className="mr-2 size-5" /> Añadir al Carrito
             </button>
 

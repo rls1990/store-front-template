@@ -7,7 +7,7 @@ import DeleteIcon from "../../icons/DeleteIcon";
 interface ColorSelectProps {
   listcolors: string[];
   className?: string;
-  onChange?: (color: string) => void;
+  onChange?: (color?: string) => void;
 }
 
 const ColorSelect: FC<ColorSelectProps> = ({
@@ -114,7 +114,12 @@ const ColorSelect: FC<ColorSelectProps> = ({
         )}
 
         {colorIndex != -1 && (
-          <button onClick={() => setColorIndex(-1)}>
+          <button
+            onClick={() => {
+              setColorIndex(-1);
+              onChange?.(undefined);
+            }}
+          >
             <DeleteIcon />
           </button>
         )}

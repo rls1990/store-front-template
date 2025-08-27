@@ -27,7 +27,7 @@ const NavItems = () => {
       <div className="flex flex-col h-auto">
         {/* button */}
         <div
-          className={`sm:hidden flex items-center justify-center h-auto mr-3 mt-3`}
+          className={`sm:hidden flex items-center justify-center h-auto mr-12 mt-3`}
         >
           <button
             type="button"
@@ -71,7 +71,7 @@ const NavItems = () => {
           </button>
         </div>
         {/* pc */}
-        <div className="h-[69px] hidden sm:block">
+        <div className="h-[69px] hidden sm:block mr-12">
           <div className="flex flex-col items-center sm:flex-row text-center h-full">
             {navItems.map((item, index) => (
               <Link
@@ -92,7 +92,7 @@ const NavItems = () => {
       {/* cell */}
       <div
         className={`sm:hidden overflow-y-hidden transition-all  ${
-          menuOpen ? "h-60" : "h-0"
+          menuOpen ? "h-50" : "h-0"
         }`}
       ></div>
 
