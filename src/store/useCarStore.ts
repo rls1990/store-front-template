@@ -18,6 +18,7 @@ interface CarStore {
   productsList: ProductStorage[];
   addProduct: (product: ProductStorage) => void;
   removeProduct: (id: number) => void;
+  resetAll:()=>void;
 }
 
 const initialState: CarStore = {
@@ -26,6 +27,7 @@ const initialState: CarStore = {
   productsList: [],
   addProduct: () => {},
   removeProduct: () => {},
+  resetAll:()=>{},
 };
 
 export const useCarStore = create<CarStore>()(
@@ -53,6 +55,7 @@ export const useCarStore = create<CarStore>()(
           };
         });
       },
+      resetAll:()=>{set({...initialState})}
     }),
     {
       name: "car-storage",

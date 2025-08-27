@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 
 export default function ContactPage() {
+  const access_key = "df137079-4063-4415-9b3a-53cca4485edb";
   return (
     <>
       <section className="bg-[url(/contacts/bg-contact.png)] bg-cover bg-center text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 text-center relative flex items-center justify-center">
@@ -35,9 +36,8 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-emerald-700">
                     Dirección
                   </h3>
-                  <p>Calle Falsa 123</p>
-                  <p>Ciudad, País</p>
-                  <p>Código Postal</p>
+                  <p>Camama</p>
+
                 </div>
               </div>
               <div className="flex items-start">
@@ -46,7 +46,8 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-emerald-700">
                     Teléfono
                   </h3>
-                  <p>+1 234 567 890</p>
+                  <p>+244931903813</p>
+                  <p>+244953961847</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -55,7 +56,7 @@ export default function ContactPage() {
                   <h3 className="text-lg font-semibold text-emerald-700">
                     Correo Electrónico
                   </h3>
-                  <p>contacto@mitienda.com</p>
+                  <p>aldinholopes4@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -76,7 +77,8 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-emerald-700 mb-6 border-b border-b-gray-300 pb-4">
               Envíanos un Mensaje
             </h2>
-            <form action="#" method="POST" className="space-y-6">
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+              <input type="hidden" name="access_key" value={access_key}></input>
               <div>
                 <label
                   htmlFor="name"

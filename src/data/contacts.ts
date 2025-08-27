@@ -8,14 +8,14 @@ export interface ContactData {
 export const data: ContactData[] = [
   {
     id: "0",
-    name: "mail",
-    value: "store@gmail.com",
+    name: "email",
+    value: "aldinholopes4@gmail.com",
     icon: "/contacts/gmail.svg",
   },
   {
     id: "1",
     name: "phone",
-    value: "1 (212) 555-1234",
+    value: "+244931903813, +244953961847",
     icon: "/contacts/call.svg",
   },
 ];

@@ -1,14 +1,19 @@
 "use client";
-
-"use client";
 import { useCarStore } from "@/store/useCarStore";
 import { IoIosSend } from "react-icons/io";
 import { FaTrash } from "react-icons/fa";
 import { FaShopSlash } from "react-icons/fa6";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function CarListPage() {
-  const { productsList, price_total, removeProduct } = useCarStore();
+  const { productsList, price_total, removeProduct, resetAll } = useCarStore();
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleRemoveProduct = (id: number) => {
     removeProduct(id);
@@ -17,6 +22,57 @@ export default function CarListPage() {
   const calculateTotalPerItem = (price: number, count: number) => {
     return price * count;
   };
+
+  const sendData = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    setSuccess(null);
+    setError(null);
+
+    const access_key = "df137079-4063-4415-9b3a-53cca4485edb";
+
+    let message = "Resumen de tu carrito:\n";
+    productsList.forEach((product) => {
+      message += `- ${product.name}\n   Marca: ${product.marca}` +
+        (product.color ? `\n   Color: ${product.color}` : "") +
+        (product.size ? `\n   Talla: ${product.size}` : "") +
+        `\n   Cantidad: x${product.count}\n   Precio unitario: $${product.price}\n   Total: $${calculateTotalPerItem(product.price, product.count)}\n`;
+    });
+    message += `\nPrecio Total: $${price_total}`;
+
+    const data = {
+      access_key,
+      name: name,
+      email: email,
+      phone: phone,
+      subject: "Pedido desde tienda online",
+      message,
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        setSuccess("Pedido enviado con éxito. Revisa tu correo.");
+        resetAll();
+      } else {
+        setError("Error al enviar el pedido. Intenta nuevamente.");
+      }
+    } catch (err) {
+      setError("Error de conexión. Intenta más tarde.");
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -28,13 +84,15 @@ export default function CarListPage() {
         <div className="text-center text-gray-500 text-xl mt-20">
           <p>Tu carrito está vacío. ¡Empieza a llenarlo!</p>
           <p className="mt-4">
-            <span className="flex items-center justify-center"><FaShopSlash className="size-20 text-emerald-700" /></span>
+            <span className="flex items-center justify-center">
+              <FaShopSlash className="size-20 text-emerald-700" />
+            </span>
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Columna de productos */}
-          <div className="md:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-6">
             {productsList.map((product) => (
               <div
                 key={product.id}
@@ -90,7 +148,7 @@ export default function CarListPage() {
           </div>
 
           {/* Columna de resumen del carrito */}
-          <div className="md:col-span-1 bg-white rounded-lg shadow-lg p-6 sticky top-23 h-[350px]">
+          <div className="lg:col-span-1 bg-white rounded-lg shadow-lg p-6 sticky top-23 h-[630px]">
             <h2 className="text-2xl font-bold text-gray-700 mb-6 border-b border-b-gray-300 pb-4">
               Resumen de compra
             </h2>
@@ -106,10 +164,41 @@ export default function CarListPage() {
               <span>Total final:</span>
               <span>${price_total}</span>
             </div>
-            <button className="w-full mt-8 py-3 bg-emerald-700 text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors shadow-md inline-flex items-center justify-center gap-2 cursor-pointer">
-              <IoIosSend className="size-7" />
-              Proceder al pago
-            </button>
+
+            <form onSubmit={sendData}>
+              <h1 className="mt-10 text-xl text-gray-700 border-b border-b-gray-300 pb-1 mb-2">Informacion Personal del Pedido</h1>
+              <div className="flex flex-col mb-3">
+                <label htmlFor="name">Nombre:</label>
+                <input id="name" type="text" name="name" placeholder="Escriba su nombre" className="border border-gray-500 rounded-lg p-2"
+                  value={name} onChange={(e) => setName(e.target.value)} required />
+              </div>
+
+              <div className="flex flex-col mb-3">
+                <label htmlFor="email">Correo:</label>
+                <input id="email" type="email" name="email" placeholder="Escriba su correo" className="border border-gray-500 rounded-lg p-2" required value={email} onChange={(e) => setEmail(e.target.value)} />
+              </div>
+
+              <div className="flex flex-col mb-3">
+                <label htmlFor="phone">Correo:</label>
+                <input id="phone" type="tel" name="phone" placeholder="Escriba su teléfono" className="border border-gray-500 rounded-lg p-2" required value={phone} onChange={(e) => setPhone(e.target.value)} />
+              </div>
+
+
+              <button
+                className="w-full mt-8 py-3 bg-emerald-700 text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors shadow-md inline-flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              >
+                <IoIosSend className="size-7" />
+                {sending ? "Enviando..." : "Proceder al pago"}
+              </button>
+
+              {success && (
+                <p className="mt-4 text-green-600 font-semibold w-full text-center">{success}</p>
+              )}
+              {error && (
+                <p className="mt-4 text-red-600 font-semibold w-full text-center">{error}</p>
+              )}
+            </form>
+
           </div>
         </div>
       )}
