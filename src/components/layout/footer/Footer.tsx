@@ -11,23 +11,22 @@ const Footer = async () => {
     <footer className="bg-gray-800 mt-12 text-gray-400 text-sm">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 [&_div]:pb-5 sm:[&_div]:pb-0">
         <div className="border-b-2 border-gray-700 sm:border-b-0 sm:border-r-2">
-          <h4 className="font-semibold text-white mb-4">MiTienda</h4>
+          <h4 className="font-semibold text-white mb-4">StoreAldinho</h4>
           <p className="text-balance p-1">
-            Tu destino online para encontrar productos de calidad con envío
-            rápido y excelente atención al cliente.
+            Seu destino on -line para encontrar produtos de qualidade com frete Atendimento ao cliente rápido e excelente.
           </p>
         </div>
         <div className="border-b-2 border-gray-700 sm:border-b-0 md:border-r-2">
-          <h4 className="font-semibold text-white mb-4">Sobre Nosotros</h4>
+          <h4 className="font-semibold text-white mb-4">Sobre nós</h4>
           <ul className="space-y-2">
             <li>
               <Link href="/about-us#mision" className="hover:text-white transition duration-150">
-                Nuestra Misión
+                Nossa missão
               </Link>
             </li>
             <li>
               <Link href="/about-us#team" className="hover:text-white transition duration-150">
-                Nuestro Equipo
+                Nossa equipe
               </Link>
             </li>
             <li>
@@ -38,11 +37,11 @@ const Footer = async () => {
           </ul>
         </div>
         <div className="border-b-2 border-gray-700 sm:border-b-0 sm:border-r-2">
-          <h4 className="font-semibold text-white mb-4">Atención al Cliente</h4>
+          <h4 className="font-semibold text-white mb-4">Atendimento ao Cliente</h4>
           <ul className="space-y-2">
             <li>
               <Link href="/contact" className="hover:text-white transition duration-150">
-                Contacto
+                Contato
               </Link>
             </li>
             {/* <li>
@@ -63,7 +62,7 @@ const Footer = async () => {
           </ul>
         </div>
         <div className="flex flex-col gap-1">
-          <h4 className="font-semibold text-white mb-4">Síguenos</h4>
+          <h4 className="font-semibold text-white mb-4">Siga -nos</h4>
           {/* <div className="inline-flex gap-3">
             {social_networks.map((item) => (
               <Link target="_blank" key={item.id + Date.now()} href={item.url}>
@@ -111,7 +110,7 @@ const Footer = async () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-8 border-t border-gray-700 pt-8">
-        &copy; 2025 MiTienda. Todos los derechos reservados.
+        &copy; 2025 StoreAldinho. Todos os direitos reservados.
       </div>
     </footer>
   );
