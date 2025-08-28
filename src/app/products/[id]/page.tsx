@@ -122,9 +122,8 @@ export default function ProductPage() {
                 </button>
 
                 <button
-                  className={`bg-red-500 rounded-full cursor-pointer p-3 transition-transform shadow-md shadow-gray-500 hover:scale-112 hover:shadow-lg active:scale-97 active:shadow-sm ${
-                    cantidad > 1 ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`bg-red-500 rounded-full cursor-pointer p-3 transition-transform shadow-md shadow-gray-500 hover:scale-112 hover:shadow-lg active:scale-97 active:shadow-sm ${cantidad > 1 ? "opacity-100" : "opacity-0"
+                    }`}
                   onClick={() => setCantidad(1)}
                 >
                   <FaRegTrashAlt className="text-white" />
@@ -152,13 +151,13 @@ export default function ProductPage() {
                 console.log(newProduct);
               }}
             >
-              <FaShoppingCart className="mr-2 size-5" /> Añadir al Carrito
+              <FaShoppingCart className="mr-2 size-5" /> Adicionar ao carrinho
             </button>
 
-            <button className="mt-4 w-full border border-gray-300 text-gray-700 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition duration-150 flex items-center justify-center cursor-pointer">
+            {/* <button className="mt-4 w-full border border-gray-300 text-gray-700 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition duration-150 flex items-center justify-center cursor-pointer">
               <FaHeart className="mr-2 size-5 text-emerald-700" /> Añadir a
-              Lista de Deseos
-            </button>
+              Lista de desejos
+            </button> */}
           </div>
         </div>
       </section>
@@ -168,7 +167,7 @@ export default function ProductPage() {
           <div className="border-b border-gray-200">
             <div className="-mb-px flex space-x-8" aria-label="Tabs">
               <button className="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-emerald-500 text-emerald-600 cursor-pointer">
-                Descripción
+                Descrição
               </button>
               {/* <button className="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 cursor-pointer">
                 Especificaciones Técnicas
@@ -180,7 +179,7 @@ export default function ProductPage() {
           </div>
           <div className="mt-8 text-gray-700">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Descripción Detallada
+              Descrição detalhada
             </h3>
             <p>{product.descripcion_detallada}</p>
           </div>

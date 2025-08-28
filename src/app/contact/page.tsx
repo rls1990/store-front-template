@@ -16,11 +16,10 @@ export default function ContactPage() {
         <div className="absolute w-full h-full bg-radial from-gray-700"></div>
         <div className="max-w-4xl mx-auto z-20">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            Contáctanos
+            Entre em contato conosco
           </h1>
           <p className="text-lg sm:text-xl text-emerald-100">
-            Estamos aquí para ayudarte. Envíanos un mensaje o encuentra nuestra
-            información de contacto.
+            Estamos aqui para ajudá -lo. Envie -nos uma mensagem ou encontre nosso Informações de contato.
           </p>
         </div>
       </section>
@@ -29,14 +28,14 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-3 lg:gap-12 p-8">
           <div className="lg:col-span-1 mb-8 lg:mb-0">
             <h2 className="text-2xl font-bold text-emerald-700 mb-6 border-b border-b-gray-300 pb-4">
-              Detalles de Contacto
+              Detalhes de contato
             </h2>
             <div className="space-y-6 text-gray-700">
               <div className="flex items-start">
                 <FaMapMarkedAlt className="text-emerald-700 text-xl mr-4 mt-1 size-7" />
                 <div>
                   <h3 className="text-lg font-semibold text-emerald-700">
-                    Dirección
+                    Endereço
                   </h3>
                   <p>Camama</p>
 
@@ -46,7 +45,7 @@ export default function ContactPage() {
                 <FaPhoneAlt className="text-emerald-700 text-xl mr-4 mt-1 size-6" />
                 <div>
                   <h3 className="text-lg font-semibold text-emerald-700">
-                    Teléfono
+                    Telefones
                   </h3>
                   <p>+244931903813</p>
                   <p>+244953961847</p>
@@ -65,7 +64,7 @@ export default function ContactPage() {
                 <FaEnvelope className="text-emerald-700 text-xl mr-4 mt-1 size-6" />
                 <div>
                   <h3 className="text-lg font-semibold text-emerald-700">
-                    Correo Electrónico
+                    Email
                   </h3>
                   <p>aldinholopes4@gmail.com</p>
                 </div>
@@ -74,11 +73,11 @@ export default function ContactPage() {
                 <FaClock className="text-emerald-700 text-xl mr-4 mt-1 size-6" />
                 <div>
                   <h3 className="text-lg font-semibold text-emerald-700">
-                    Horario de Atención
+                    Horas de atenção
                   </h3>
-                  <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                  <p>Segunda a sexta: 9:00 AM - 6:00 PM</p>
                   <p>Sábados: 10:00 AM - 2:00 PM</p>
-                  <p>Domingos: Cerrado</p>
+                  <p>Domingos: Fechado</p>
                 </div>
               </div>
             </div>
@@ -86,7 +85,7 @@ export default function ContactPage() {
 
           <div className="lg:col-span-2">
             <h2 className="text-2xl font-bold text-emerald-700 mb-6 border-b border-b-gray-300 pb-4">
-              Envíanos un Mensaje
+              Envie -nos uma mensagem
             </h2>
             <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
               <input type="hidden" name="access_key" value={access_key}></input>
@@ -95,7 +94,7 @@ export default function ContactPage() {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Nombre Completo
+                  Nome completo
                 </label>
                 <input
                   type="text"
@@ -110,7 +109,7 @@ export default function ContactPage() {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Correo Electrónico
+                  Email
                 </label>
                 <input
                   type="email"
@@ -125,7 +124,7 @@ export default function ContactPage() {
                   htmlFor="subject"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Asunto (Opcional)
+                  Assunto (opcional)
                 </label>
                 <input
                   type="text"
@@ -139,7 +138,7 @@ export default function ContactPage() {
                   htmlFor="phone"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Teléfono *
+                  Telefone *
                 </label>
                 <input
                   type="tel"
@@ -154,7 +153,7 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Mensaje
+                  Mensagem
                 </label>
                 <textarea
                   id="message"
@@ -169,7 +168,7 @@ export default function ContactPage() {
                   className="inline-flex justify-center items-center gap-2 py-2 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition duration-150 cursor-pointer"
                 >
                   <BsSend className="size-5" />
-                  Enviar Mensaje
+                  Enviar mensagem
                 </button>
               </div>
             </form>

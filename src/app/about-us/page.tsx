@@ -6,46 +6,46 @@ const teamMembers = [
     name: "Ana Martínez",
     role: "CEO & Fundadora",
     image: "/about-us/team-ana.jpg",
-    bio: "Apasionada por ofrecer lo mejor en productos y experiencia.",
+    bio: "Apaixonada por oferecer o melhor em produtos e experiência.",
   },
   {
     name: "Luis Fernández",
-    role: "Director de Operaciones",
+    role: "Diretor de Operações",
     image: "/about-us/team-luis.jpg",
-    bio: "Garantizando entregas rápidas y confiables.",
+    bio: "Garantindo entregas rápidas e confiáveis.",
   },
   {
     name: "Carla Gómez",
-    role: "Marketing & Comunicación",
+    role: "Marketing & Comunicação",
     image: "/about-us/team-carla.jpg",
-    bio: "Conectando nuestra marca con nuestros clientes.",
+    bio: "Conectando nossa marca aos nossos clientes.",
   },
   {
     name: "Javier López",
-    role: "Atención al Cliente",
+    role: "Atendimento ao Cliente",
     image: "/about-us/team-javier.jpg",
-    bio: "Siempre listo para ayudarte con cualquier consulta.",
+    bio: "Sempre pronto para ajudar você com qualquer dúvida.",
   },
 ];
 
 const values = [
   {
     icon: <FiAward className="mx-auto mb-4 h-12 w-12 text-emerald-600" />,
-    title: "Calidad",
+    title: "Qualidade",
     description:
-      "Solo trabajamos con los mejores proveedores para asegurar productos duraderos y bien fabricados.",
+      "Trabalhamos apenas com os melhores fornecedores para garantir produtos duráveis e bem fabricados.",
   },
   {
     icon: <FiShield className="mx-auto mb-4 h-12 w-12 text-emerald-600" />,
-    title: "Confianza",
+    title: "Confiança",
     description:
-      "Tu seguridad y privacidad son nuestra prioridad en cada compra y transacción.",
+      "Sua segurança e privacidade são nossa prioridade em cada compra e transação.",
   },
   {
     icon: <FiHeadphones className="mx-auto mb-4 h-12 w-12 text-emerald-600" />,
-    title: "Atención",
+    title: "Atendimento",
     description:
-      "Estamos siempre disponibles para ayudarte y resolver tus dudas rápidamente.",
+      "Estamos sempre disponíveis para ajudar você e resolver suas dúvidas rapidamente.",
   },
 ];
 
@@ -57,11 +57,10 @@ export default function AboutUsPage() {
         <div className="absolute w-full h-full bg-radial from-gray-700"></div>
         <div className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            Acerca de Nosotros
+            Sobre nós
           </h1>
           <p className="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto">
-            Explora nuestra selección y vive la mejor experiencia de compra
-            online
+            Explore nossa seleção e viva a melhor experiência de compra on-line
           </p>
         </div>
       </section>
@@ -70,13 +69,10 @@ export default function AboutUsPage() {
       <section id="mision" className="py-16 px-6 sm:px-12 lg:px-24 bg-white text-gray-800">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold mb-6 text-center border-b border-b-gray-300">
-            Nuestra Misión
+            Nossa missão
           </h2>
           <p className="text-lg leading-relaxed max-w-3xl mx-auto text-center">
-            En nuestra tienda online, nos comprometemos a ofrecer productos de
-            calidad, a precios accesibles y con un servicio al cliente
-            excepcional. Queremos que cada compra que hagas sea una experiencia
-            memorable y satisfactoria.
+            Em nossa loja online, estamos comprometidos em oferecer produtos de qualidade, a preços acessíveis e com um atendimento ao cliente excepcional. Queremos que cada compra para fazer é uma experiência memorável e satisfatória.
           </p>
         </div>
       </section>
@@ -85,7 +81,7 @@ export default function AboutUsPage() {
       <section id="team" className="py-16 px-6 sm:px-12 lg:px-24 bg-gray-100 text-gray-900">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold mb-10 text-center">
-            Conoce a Nuestro Equipo
+            Conheça nossa equipe
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {teamMembers.map((person) => (
@@ -111,7 +107,7 @@ export default function AboutUsPage() {
       <section id="valores" className="py-20 px-6 sm:px-12 lg:px-24 bg-gradient-to-r from-white via-gray-50 to-white text-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-extrabold mb-12 text-center tracking-wide text-emerald-700">
-            Nuestros Valores
+            Nossos valores
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {values.map(({ icon, title, description }) => (

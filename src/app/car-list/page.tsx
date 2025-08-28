@@ -45,7 +45,7 @@ export default function CarListPage() {
       name: name,
       email: email,
       phone: phone,
-      subject: "Pedido desde tienda online",
+      subject: "Pedido da loja online",
       message,
     };
 
@@ -62,13 +62,13 @@ export default function CarListPage() {
       const json = await res.json();
 
       if (json.success) {
-        setSuccess("Pedido enviado con éxito. Revisa tu correo.");
+        setSuccess("Pedido enviado com sucesso. Verifique seu e -mail.");
         resetAll();
       } else {
-        setError("Error al enviar el pedido. Intenta nuevamente.");
+        setError("Erro enviando o pedido. Tente novamente.");
       }
     } catch (err) {
-      setError("Error de conexión. Intenta más tarde.");
+      setError("Erro de conexão. Tente mais tarde.");
       console.log(err);
     } finally {
       setSending(false);
@@ -78,12 +78,12 @@ export default function CarListPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <h1 className="text-4xl font-bold text-center text-gray-700 mb-10">
-        Tu carrito de compras
+        Seu carrinho de compras
       </h1>
 
       {productsList.length === 0 ? (
         <div className="text-center text-gray-500 text-xl mt-20">
-          <p>Tu carrito está vacío. ¡Empieza a llenarlo!</p>
+          <p>Seu carrinho está vazio. Comece a preenchê -lo!</p>
           <p className="mt-4">
             <span className="flex items-center justify-center">
               <FaShopSlash className="size-20 text-emerald-700" />
@@ -151,7 +151,7 @@ export default function CarListPage() {
           {/* Columna de resumen del carrito */}
           <div className="lg:col-span-1 bg-white rounded-lg shadow-lg p-6 sticky top-23 h-[630px]">
             <h2 className="text-2xl font-bold text-gray-700 mb-6 border-b border-b-gray-300 pb-4">
-              Resumen de compra
+              Resumo da compra
             </h2>
             <div className="flex justify-between items-center text-lg text-gray-700 mb-4">
               <span>Subtotal:</span>
@@ -159,29 +159,29 @@ export default function CarListPage() {
             </div>
             <div className="flex justify-between items-center text-lg text-gray-700 mb-4">
               <span>Envío estimado:</span>
-              <span className="font-semibold">Gratis</span>
+              <span className="font-semibold">Livre</span>
             </div>
             <div className="flex justify-between items-center text-2xl font-bold text-gray-900 mt-6 pt-4 border-t border-gray-300">
-              <span>Total final:</span>
+              <span>Final total:</span>
               <span>${price_total}</span>
             </div>
 
             <form onSubmit={sendData}>
               <h1 className="mt-10 text-xl text-gray-700 border-b border-b-gray-300 pb-1 mb-2">Informacion Personal del Pedido</h1>
               <div className="flex flex-col mb-3">
-                <label htmlFor="name">Nombre:</label>
-                <input id="name" type="text" name="name" placeholder="Escriba su nombre" className="border border-gray-500 rounded-lg p-2"
+                <label htmlFor="name">Nome:</label>
+                <input id="name" type="text" name="name" placeholder="Escreva seu nome" className="border border-gray-500 rounded-lg p-2"
                   value={name} onChange={(e) => setName(e.target.value)} required />
               </div>
 
               <div className="flex flex-col mb-3">
-                <label htmlFor="email">Correo:</label>
-                <input id="email" type="email" name="email" placeholder="Escriba su correo" className="border border-gray-500 rounded-lg p-2" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label htmlFor="email">Email:</label>
+                <input id="email" type="email" name="email" placeholder="Escreva seu email" className="border border-gray-500 rounded-lg p-2" required value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
 
               <div className="flex flex-col mb-3">
-                <label htmlFor="phone">Correo:</label>
-                <input id="phone" type="tel" name="phone" placeholder="Escriba su teléfono" className="border border-gray-500 rounded-lg p-2" required value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <label htmlFor="phone">Telefone:</label>
+                <input id="phone" type="tel" name="phone" placeholder="Escreva seu telefone" className="border border-gray-500 rounded-lg p-2" required value={phone} onChange={(e) => setPhone(e.target.value)} />
               </div>
 
 

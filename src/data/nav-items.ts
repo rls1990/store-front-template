@@ -4,8 +4,8 @@ interface NavItemsType {
 }
 
 export const navItems: NavItemsType[] = [
-  { name: "Inicio", url: "/" },
+  { name: "Início", url: "/" },
   { name: "Ofertas", url: "/offers" },
-  { name: "About Us", url: "/about-us" },
+  { name: "Sobre Nós", url: "/about-us" },
   { name: "Contacto", url: "/contact" },
 ];

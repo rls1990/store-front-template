@@ -7,7 +7,7 @@ export interface LogoData {
 
 export const data: LogoData = {
   id: 0,
-  title: "Catalog",
-  subtitle: "Dropshipping",
+  title: "Aldinho",
+  subtitle: "Store Products",
   image: "/images/logo.png",
 };

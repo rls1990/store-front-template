@@ -9,23 +9,23 @@ export interface ItemSlider {
 export const data: ItemSlider[] = [
   {
     id: "sih1",
-    title: "¡Llegó la Primavera!",
-    subtitle: "30% OFF en ropa y accesorios. Solo por tiempo limitado",
+    title: "¡A primavera chegou!",
+    subtitle: "30% de desconto em roupas e acessórios. Apenas por tempo limitado",
     image: "/slider-hero/vestidos-verano.png",
     route: "#",
   },
   {
     id: "sih2",
-    title: "Nuevo Smartphone Pro-X",
-    subtitle: "Tecnología de vanguardia con cámara 4K. ¡Reserva el tuyo hoy!",
+    title: "Novo Smartphone Pro-X",
+    subtitle: "¡Tecnologia Vanguardia com câmera 4K. Reserve o seu hoje!",
     image: "/slider-hero/phone.png",
     route: "#",
   },
   {
     id: "sih3",
-    title: "2×1 en Hogar",
+    title: "2×1 Em casa",
     subtitle:
-      "Lleva dos productos por el precio de uno. Solo hasta agotar stock",
+      "Ele carrega dois produtos pelo preço de um. Somente até o estoque",
     image: "/slider-hero/productos-hogar.png",
     route: "#",
   },

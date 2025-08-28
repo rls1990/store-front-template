@@ -128,7 +128,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                     nombre: e.target.value,
                   };
                 }}
-                placeholder="Buscar por nombre..."
+                placeholder="Pesquise por nome..."
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-150 ease-in-out placeholder:text-[15px]"
               />
               <div className="absolute left-0 top-0 bottom-0 pl-3 flex items-center pointer-events-none">
@@ -156,8 +156,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
               <ChevronDownIcon
                 className={
                   "size-5 mr-1" +
-                  ` transition-transform ${
-                    openMenuFulter ? "rotate-0" : "-rotate-90"
+                  ` transition-transform ${openMenuFulter ? "rotate-0" : "-rotate-90"
                   }`
                 }
               />
@@ -171,7 +170,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
             }
           >
             <h4 className="text-[16px] font-semibold text-gray-700 mb-3 border-b border-b-gray-300 pb-2 m-4 pl-8">
-              Opciones de Filtro
+              Opções de filtro
             </h4>
             <div
               className="m-4 grid items-center gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-7 border-b border-b-gray-300 pb-5"
@@ -220,7 +219,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
               >
                 <span className="flex items-center justify-center gap-1">
                   <FilterSearchIcon />
-                  Aplicar Filtros
+                  Aplicar filtros
                 </span>
               </button>
 
@@ -233,7 +232,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
               >
                 <span className="flex items-center justify-center gap-1">
                   <FaFilterCircleXmark className="size-6" />
-                  Reset Filters
+                  Redefinir filtros
                 </span>
               </button>
             </div>
@@ -248,7 +247,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
             <div className="bg-white shadow-md sticky top-24 h-[510px] overflow-y-auto rounded-lg">
               <h3 className="text-lg font-semibold text-white sticky top-0 left-0 right-0 p-3 shadow-md inline-flex items-center justify-center gap-2 w-full z-30 bg-gradient-to-r from-emerald-500 to-teal-600">
                 <BiCategoryAlt className="size-6" />
-                Categorías
+                Categorias
               </h3>
               <ul className="space-y-2 text-gray-700 px-3 py-3">
                 {categories.map((item, index) => (
@@ -274,9 +273,8 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                       }}
                       className={
                         "w-full text-left px-4 py-2 rounded-md transition-all duration-200 cursor-pointer hover:bg-gray-200" +
-                        `${
-                          filter_categories_index === index &&
-                          " bg-gray-100 text-[#06744f]"
+                        `${filter_categories_index === index &&
+                        " bg-gray-100 text-[#06744f]"
                         }`
                       }
                     >
@@ -292,8 +290,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                         <FaAngleRight
                           className={
                             "transition-transform duration-200" +
-                            `${
-                              filter_categories_index === index && " rotate-90"
+                            `${filter_categories_index === index && " rotate-90"
                             }`
                           }
                         />
@@ -301,9 +298,8 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                     </button>
 
                     <ul
-                      className={`mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in transition-all duration-300${
-                        filter_categories_index == index ? " h-60" : " h-0"
-                      }`}
+                      className={`mt-2 pl-4 border-l-2 border-l-[#d1d5db] overflow-y-hidden fade-in transition-all duration-300${filter_categories_index == index ? " h-60" : " h-0"
+                        }`}
                     >
                       {item.subcategories.map((subc, index1) => (
                         <li key={"subc" + index1}>
@@ -317,9 +313,8 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                             }}
                             className={
                               "w-full text-left px-2 py-1 rounded-md text-gray-600 hover:bg-gray-200 transition duration-150 pl-2 pr-2 pt-1 pb-1 text-sm cursor-pointer" +
-                              `${
-                                index1 == filter_subcategories_index &&
-                                " bg-gray-200"
+                              `${index1 == filter_subcategories_index &&
+                              " bg-gray-200"
                               }`
                             }
                           >
@@ -335,7 +330,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
           </aside>
           <main key={keyProducts} className="lg:col-span-3">
             <h2 className="text-2xl lg:text-3xl font-bold text-emerald-700 text-center mb-12">
-              Nuestros Productos
+              Nossos produtos
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 relative min-h-dvh">
               {filteredProductsData.length > 0 ? (
@@ -349,11 +344,10 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                   <div className="flex flex-col items-center justify-center bg-gray-50 p-6">
                     <FaBoxOpen className="text-gray-400 text-9xl mb-6" />
                     <h2 className="text-3xl font-semibold text-gray-700 mb-2">
-                      No se encontraron productos
+                      Nenhum produto foi encontrado
                     </h2>
                     <p className="text-gray-500 max-w-md text-center">
-                      Lo sentimos, no hay productos disponibles en este momento.
-                      Por favor, intenta nuevamente más tarde.
+                      Sentimos isso, não há produtos disponíveis neste momento. Por favor, tente novamente mais tarde.
                     </p>
                   </div>
                 </div>
@@ -364,13 +358,13 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer"
                 onClick={showMoreProducts}
               >
-                Mostrar más
+                Mostre mais
                 <TbCategoryPlus size={24} className="animate-pulse" />
               </button>
             )}
 
             <h2 className="text-2xl lg:text-3xl font-bold text-emerald-700 text-center mb-12 mt-12">
-              Ofertas Especiales
+              Ofertas especiais
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7 relative">
               {products
@@ -385,7 +379,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({ marcas, categories }) => {
                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 via-emerald-700 to-emerald-900 text-white font-semibold py-3 px-6 rounded-full shadow-xl transition duration-500 transform hover:scale-110 hover:brightness-110 focus:outline-none focus:ring-3 focus:ring-emerald-300 mt-10 cursor-pointer w-60"
                 href="/offers"
               >
-                Mostrar más ofertas
+                Mostre mais ofertas
                 <TbCategoryPlus size={24} className="animate-pulse" />
               </Link>
             )}
