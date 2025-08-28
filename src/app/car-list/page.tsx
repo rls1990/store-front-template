@@ -69,6 +69,7 @@ export default function CarListPage() {
       }
     } catch (err) {
       setError("Error de conexión. Intenta más tarde.");
+      console.log(err);
     } finally {
       setSending(false);
     }
