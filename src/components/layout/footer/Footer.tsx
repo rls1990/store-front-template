@@ -1,10 +1,10 @@
 import { getContactData } from "@/services/get-contact";
-import { getSocialNetworksData } from "@/services/get-social-networks";
+// import { getSocialNetworksData } from "@/services/get-social-networks";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = async () => {
-  const social_networks = await getSocialNetworksData();
+  // const social_networks = await getSocialNetworksData();
   const contacts = await getContactData();
 
   return (
