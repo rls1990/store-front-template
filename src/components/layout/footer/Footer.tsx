@@ -1,6 +1,7 @@
 import { getContactData } from "@/services/get-contact";
 import { getSocialNetworksData } from "@/services/get-social-networks";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = async () => {
   const social_networks = await getSocialNetworksData();
@@ -20,19 +21,19 @@ const Footer = async () => {
           <h4 className="font-semibold text-white mb-4">Sobre Nosotros</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-white transition duration-150">
-                Nuestra Historia
-              </a>
+              <Link href="/about-us#mision" className="hover:text-white transition duration-150">
+                Nuestra Misión
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-150">
-                Misión y Visión
-              </a>
+              <Link href="/about-us#team" className="hover:text-white transition duration-150">
+                Nuestro Equipo
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-150">
-                Únete a Nuestro Equipo
-              </a>
+              <Link href="/about-us#valores" className="hover:text-white transition duration-150">
+                Valores
+              </Link>
             </li>
           </ul>
         </div>
@@ -40,32 +41,32 @@ const Footer = async () => {
           <h4 className="font-semibold text-white mb-4">Atención al Cliente</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-white transition duration-150">
+              <Link href="/contact" className="hover:text-white transition duration-150">
                 Contacto
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#" className="hover:text-white transition duration-150">
+            {/* <li>
+              <Link href="#" className="hover:text-white transition duration-150">
                 Preguntas Frecuentes
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-150">
+              <Link href="#" className="hover:text-white transition duration-150">
                 Envíos y Devoluciones
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition duration-150">
+              <Link href="#" className="hover:text-white transition duration-150">
                 Política de Privacidad
-              </a>
-            </li>
+              </Link>
+            </li> */}
           </ul>
         </div>
         <div className="flex flex-col gap-1">
           <h4 className="font-semibold text-white mb-4">Síguenos</h4>
-          <div className="inline-flex gap-3">
+          {/* <div className="inline-flex gap-3">
             {social_networks.map((item) => (
-              <a key={item.id + Date.now()} href={item.url}>
+              <Link target="_blank" key={item.id + Date.now()} href={item.url}>
                 <Image
                   src={item.image}
                   width={200}
@@ -73,10 +74,24 @@ const Footer = async () => {
                   alt="social network"
                   className="size-[24px]"
                 />
-              </a>
+              </Link>
             ))}
-          </div>
+          </div> */}
           <div className="flex flex-col gap-1">
+            <Link
+              href="https://www.facebook.com/share/16a1XoyX88"
+              className="inline-flex items-center gap-2"
+              target="_blank"
+            >
+              <Image
+                src="/social-networks/facebook.svg"
+                width={200}
+                height={200}
+                alt="social network"
+                className="size-[24px]"
+              />
+              https://www.facebook.com/
+            </Link>
             {contacts.map((item) => (
               <div
                 key={item.id + Date.now()}

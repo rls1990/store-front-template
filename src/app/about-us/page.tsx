@@ -67,7 +67,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Nuestra Misión */}
-      <section className="py-16 px-6 sm:px-12 lg:px-24 bg-white text-gray-800">
+      <section id="mision" className="py-16 px-6 sm:px-12 lg:px-24 bg-white text-gray-800">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold mb-6 text-center border-b border-b-gray-300">
             Nuestra Misión
@@ -82,7 +82,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Nuestro Equipo */}
-      <section className="py-16 px-6 sm:px-12 lg:px-24 bg-gray-100 text-gray-900">
+      <section id="team" className="py-16 px-6 sm:px-12 lg:px-24 bg-gray-100 text-gray-900">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold mb-10 text-center">
             Conoce a Nuestro Equipo
@@ -108,7 +108,7 @@ export default function AboutUsPage() {
 
       {/* Valores */}
 
-      <section className="py-20 px-6 sm:px-12 lg:px-24 bg-gradient-to-r from-white via-gray-50 to-white text-gray-900">
+      <section id="valores" className="py-20 px-6 sm:px-12 lg:px-24 bg-gradient-to-r from-white via-gray-50 to-white text-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-extrabold mb-12 text-center tracking-wide text-emerald-700">
             Nuestros Valores

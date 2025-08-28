@@ -24,7 +24,7 @@ const ContactsTop: FC<ContactsTopProps> = ({ items, className }) => {
             alt="image contact"
             className="size-[20px]"
           />
-          {item.value}
+          {item.value.split(",")[0]}
         </div>
       ))}
     </div>

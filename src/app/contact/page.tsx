@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { BsSend } from "react-icons/bs";
 import {
   FaClock,
   FaEnvelope,
+  FaFacebook,
   FaMapMarkedAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
@@ -48,6 +50,15 @@ export default function ContactPage() {
                   </h3>
                   <p>+244931903813</p>
                   <p>+244953961847</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <FaFacebook className="text-emerald-700 text-xl mr-4 mt-1 size-6" />
+                <div>
+                  <h3 className="text-lg font-semibold text-emerald-700">
+                    Facebook
+                  </h3>
+                  <Link href="https://www.facebook.com/share/16a1XoyX88" target="_blank" className="hover:text-emerald-700">https://www.facebook.com/</Link>
                 </div>
               </div>
               <div className="flex items-start">

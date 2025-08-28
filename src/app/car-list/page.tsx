@@ -188,7 +188,7 @@ export default function CarListPage() {
                 className="w-full mt-8 py-3 bg-emerald-700 text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors shadow-md inline-flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 <IoIosSend className="size-7" />
-                {sending ? "Enviando..." : "Proceder al pago"}
+                {sending ? "Enviando..." : "Enviar Pedido"}
               </button>
 
               {success && (
