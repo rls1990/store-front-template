@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
-import { FaHeart, FaRegTrashAlt, FaShoppingCart } from "react-icons/fa";
+import { FaRegTrashAlt, FaShoppingCart } from "react-icons/fa";
 import { ProductStorage } from "../../../store/useCarStore";
 
 export default function ProductPage() {
